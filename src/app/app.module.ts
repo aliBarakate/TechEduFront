@@ -7,13 +7,17 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MainNavbarComponent } from './main-navbar/main-navbar.component';
+import { SimpleLoginFormComponent } from './simple-login-form/simple-login-form.component';
+import { InscriptionPageComponent } from './inscription-page/inscription-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     LoginPageComponent,
-    MainNavbarComponent
+    MainNavbarComponent,
+    SimpleLoginFormComponent,
+    InscriptionPageComponent
   ],
   imports: [
     BrowserModule,
