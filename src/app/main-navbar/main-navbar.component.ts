@@ -15,4 +15,12 @@ export class MainNavbarComponent implements OnInit {
   onLoadLoginPage(){
     this.router.navigate(['./login']);
   }
+
+  onLoadMainPage(){
+    this.router.navigate(['./']);
+  }
+
+  onLoadInscriptionPage(){
+    this.router.navigate(['./inscription']);
+  }
 }

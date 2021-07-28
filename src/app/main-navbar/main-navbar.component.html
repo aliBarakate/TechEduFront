@@ -1,7 +1,8 @@
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="#">
-        <img src="./assets/SCHOOLMOUVLOGO.png" width="112" height="28">
+      <a class="navbar-item" href="#" (click)="onLoadMainPage()">
+        <img src="./assets/medecineconcourslogo.png" width="112" height="28">
+        
       </a>
   
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -28,7 +29,7 @@
   
           <div class="navbar-dropdown">
             <a class="navbar-item" style="text-decoration: none;">
-              Math
+              Mathématiques
             </a>
             <a class="navbar-item" style="text-decoration: none;">
               Physique
@@ -47,7 +48,7 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-primary is-rounded" style="text-decoration: none;">
+            <a class="button is-primary is-rounded" style="text-decoration: none;" (click)="onLoadInscriptionPage()">
               <strong>S'inscrire</strong>
             </a>
             <a class="button is-light is-rounded" style="text-decoration: none;" (click)="onLoadLoginPage()">

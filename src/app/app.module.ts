@@ -16,6 +16,7 @@ const appRoutes: Routes = [
   { path: 'login',component: LoginPageComponent},
   { path: 'inscription',component: InscriptionPageComponent},
   
+  
 ];
 
 @NgModule({
