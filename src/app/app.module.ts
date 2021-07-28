@@ -9,6 +9,14 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { MainNavbarComponent } from './main-navbar/main-navbar.component';
 import { SimpleLoginFormComponent } from './simple-login-form/simple-login-form.component';
 import { InscriptionPageComponent } from './inscription-page/inscription-page.component';
+import { Routes,RouterModule } from "@angular/router";
+
+const appRoutes: Routes = [
+  { path: '',component: LandingPageComponent},
+  { path: 'login',component: LoginPageComponent},
+  { path: 'inscription',component: InscriptionPageComponent},
+  
+];
 
 @NgModule({
   declarations: [
@@ -23,7 +31,8 @@ import { InscriptionPageComponent } from './inscription-page/inscription-page.co
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
