@@ -10,6 +10,7 @@ import { MainNavbarComponent } from './main-navbar/main-navbar.component';
 import { SimpleLoginFormComponent } from './simple-login-form/simple-login-form.component';
 import { InscriptionPageComponent } from './inscription-page/inscription-page.component';
 import { Routes,RouterModule } from "@angular/router";
+import { FooterComponentComponent } from './footer-component/footer-component.component';
 
 const appRoutes: Routes = [
   { path: '',component: LandingPageComponent},
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
     LoginPageComponent,
     MainNavbarComponent,
     SimpleLoginFormComponent,
-    InscriptionPageComponent
+    InscriptionPageComponent,
+    FooterComponentComponent
   ],
   imports: [
     BrowserModule,
