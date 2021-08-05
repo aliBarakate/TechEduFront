@@ -11,6 +11,7 @@ import { SimpleLoginFormComponent } from './simple-login-form/simple-login-form.
 import { InscriptionPageComponent } from './inscription-page/inscription-page.component';
 import { Routes,RouterModule } from "@angular/router";
 import { FooterComponentComponent } from './footer-component/footer-component.component';
+import { RegistrationComponentComponent } from './registration-component/registration-component.component';
 
 const appRoutes: Routes = [
   { path: '',component: LandingPageComponent},
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
     MainNavbarComponent,
     SimpleLoginFormComponent,
     InscriptionPageComponent,
-    FooterComponentComponent
+    FooterComponentComponent,
+    RegistrationComponentComponent
   ],
   imports: [
     BrowserModule,
