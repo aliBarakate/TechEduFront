@@ -12,13 +12,14 @@ import { InscriptionPageComponent } from './inscription-page/inscription-page.co
 import { Routes,RouterModule } from "@angular/router";
 import { FooterComponentComponent } from './footer-component/footer-component.component';
 import { RegistrationComponentComponent } from './registration-component/registration-component.component';
+import { HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: '',component: LandingPageComponent},
   { path: 'login',component: LoginPageComponent},
   { path: 'inscription',component: InscriptionPageComponent},
-  
-  
+
+
 ];
 
 @NgModule({
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
