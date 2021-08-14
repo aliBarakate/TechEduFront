@@ -13,6 +13,7 @@ import { Routes,RouterModule } from "@angular/router";
 import { FooterComponentComponent } from './footer-component/footer-component.component';
 import { RegistrationComponentComponent } from './registration-component/registration-component.component';
 import { HttpClientModule} from '@angular/common/http';
+import { AjoutContenuPageComponent } from './ajout-contenu-page/ajout-contenu-page.component';
 
 const appRoutes: Routes = [
   { path: '',component: LandingPageComponent},
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     SimpleLoginFormComponent,
     InscriptionPageComponent,
     FooterComponentComponent,
-    RegistrationComponentComponent
+    RegistrationComponentComponent,
+    AjoutContenuPageComponent
   ],
   imports: [
     BrowserModule,
