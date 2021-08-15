@@ -14,11 +14,12 @@ import { FooterComponentComponent } from './footer-component/footer-component.co
 import { RegistrationComponentComponent } from './registration-component/registration-component.component';
 import { HttpClientModule} from '@angular/common/http';
 import { AjoutContenuPageComponent } from './ajout-contenu-page/ajout-contenu-page.component';
+import { InscriptionHttpSecondComponent } from './inscription-http-second/inscription-http-second.component';
 
 const appRoutes: Routes = [
   { path: '',component: LandingPageComponent},
   { path: 'login',component: LoginPageComponent},
-  { path: 'inscription',component: InscriptionPageComponent},
+  { path: 'inscription',component: InscriptionHttpSecondComponent},
   { path: 'ajoutContenu',component: AjoutContenuPageComponent},
 
 
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
     InscriptionPageComponent,
     FooterComponentComponent,
     RegistrationComponentComponent,
-    AjoutContenuPageComponent
+    AjoutContenuPageComponent,
+    InscriptionHttpSecondComponent
   ],
   imports: [
     BrowserModule,
