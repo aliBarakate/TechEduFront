@@ -19,6 +19,8 @@ const appRoutes: Routes = [
   { path: '',component: LandingPageComponent},
   { path: 'login',component: LoginPageComponent},
   { path: 'inscription',component: InscriptionPageComponent},
+  { path: 'ajoutContenu',component: AjoutContenuPageComponent},
+
 
 
 ];
