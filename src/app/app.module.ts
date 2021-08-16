@@ -15,12 +15,22 @@ import { RegistrationComponentComponent } from './registration-component/registr
 import { HttpClientModule} from '@angular/common/http';
 import { AjoutContenuPageComponent } from './ajout-contenu-page/ajout-contenu-page.component';
 import { InscriptionHttpSecondComponent } from './inscription-http-second/inscription-http-second.component';
+import { ConfirmationSmsPageComponent } from './confirmation-sms-page/confirmation-sms-page.component';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { fr_FR } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import fr from '@angular/common/locales/fr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NzResultModule } from 'ng-zorro-antd/result'
+
+registerLocaleData(fr);
 
 const appRoutes: Routes = [
   { path: '',component: LandingPageComponent},
   { path: 'login',component: LoginPageComponent},
   { path: 'inscription',component: InscriptionHttpSecondComponent},
   { path: 'ajoutContenu',component: AjoutContenuPageComponent},
+  { path: 'confirmationSMS',component: ConfirmationSmsPageComponent},
 
 
 
@@ -37,7 +47,8 @@ const appRoutes: Routes = [
     FooterComponentComponent,
     RegistrationComponentComponent,
     AjoutContenuPageComponent,
-    InscriptionHttpSecondComponent
+    InscriptionHttpSecondComponent,
+    ConfirmationSmsPageComponent
   ],
   imports: [
     BrowserModule,
@@ -45,9 +56,11 @@ const appRoutes: Routes = [
     NgbModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    NzResultModule
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: fr_FR }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

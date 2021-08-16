@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import {NgForm} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inscription-http-second',
@@ -17,7 +18,7 @@ export class InscriptionHttpSecondComponent implements OnInit {
 
     suivantactivated =false;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private router : Router) {
 
 }
 
@@ -49,6 +50,10 @@ export class InscriptionHttpSecondComponent implements OnInit {
   relocate_home()
 {
      location.href = "receveur";
+}
+
+onLoadLoginPage(){
+  this.router.navigate(['./confirmationSMS']);
 }
 
   ngOnInit(): void {
