@@ -23,4 +23,11 @@ export class MainNavbarComponent implements OnInit {
   onLoadInscriptionPage(){
     this.router.navigate(['./inscription']);
   }
+
+  onLoadeditorPage(){
+    this.router.navigate(['./pageEditor']);
+  }
+  onLoadgestionFiliere(){
+    this.router.navigate(['./gestionFiliere']);
+  }
 }

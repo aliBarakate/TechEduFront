@@ -2,49 +2,44 @@
     <div class="navbar-brand">
       <a class="navbar-item" href="#" (click)="onLoadMainPage()">
         <img src="./assets/medecineconcourslogo.png" width="112" height="28">
-        
+
       </a>
-  
+
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
-  
+
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <a href="" class="navbar-item" style="text-decoration: none;">
           Qui sommes nous ?
         </a>
-  
+
         <a class="navbar-item" style="text-decoration: none;">
           Présentation
         </a>
-  
+
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" style="text-decoration: none;">
-            Matiéres
+            Options
           </a>
-  
+
           <div class="navbar-dropdown">
-            <a class="navbar-item" style="text-decoration: none;">
-              Mathématiques
+            <a class="navbar-item" style="text-decoration: none;" (click)="onLoadeditorPage()">
+              Editeur
             </a>
-            <a class="navbar-item" style="text-decoration: none;">
-              Physique
-            </a>
-            <a class="navbar-item" style="text-decoration: none;">
-              Chimie
-            </a>
-            
-            <a class="navbar-item" style="text-decoration: none;">
-              Sciences de la vie et de la terre
+
+
+            <a class="navbar-item" style="text-decoration: none;" (click)="onLoadgestionFiliere()">
+              Gestion des filiéres
             </a>
           </div>
         </div>
       </div>
-  
+
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">

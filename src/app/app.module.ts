@@ -21,8 +21,11 @@ import { fr_FR } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import fr from '@angular/common/locales/fr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NzResultModule } from 'ng-zorro-antd/result'
-
+import { NzResultModule } from 'ng-zorro-antd/result';
+import { CrudFiliereComponentComponent } from './crud-filiere-component/crud-filiere-component.component';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { EditorPageComponent } from './editor-page/editor-page.component';
+import {EditorModule} from 'primeng/editor';
 registerLocaleData(fr);
 
 const appRoutes: Routes = [
@@ -31,6 +34,8 @@ const appRoutes: Routes = [
   { path: 'inscription',component: InscriptionHttpSecondComponent},
   { path: 'ajoutContenu',component: AjoutContenuPageComponent},
   { path: 'confirmationSMS',component: ConfirmationSmsPageComponent},
+  { path: 'gestionFiliere',component: CrudFiliereComponentComponent},
+  { path: 'pageEditor',component: EditorPageComponent},
 
 
 
@@ -48,7 +53,9 @@ const appRoutes: Routes = [
     RegistrationComponentComponent,
     AjoutContenuPageComponent,
     InscriptionHttpSecondComponent,
-    ConfirmationSmsPageComponent
+    ConfirmationSmsPageComponent,
+    CrudFiliereComponentComponent,
+    EditorPageComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +65,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     BrowserAnimationsModule,
-    NzResultModule
+    NzResultModule,
+    NzTableModule,
+    EditorModule
   ],
   providers: [{ provide: NZ_I18N, useValue: fr_FR }],
   bootstrap: [AppComponent]
