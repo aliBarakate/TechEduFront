@@ -12,6 +12,8 @@ export class CrudfiliereService {
   }
   urlPost="http://127.0.0.1:8000/api/filiere";
   urlDelete="http://127.0.0.1:8000/api/filieres/";
+  urlPut="http://127.0.0.1:8000/api/filieres/";
+  id:any;
 
   constructor(private http: HttpClient) {
 

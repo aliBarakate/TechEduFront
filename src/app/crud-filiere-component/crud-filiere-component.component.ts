@@ -68,6 +68,12 @@ this.router.navigate(['./confirmationSMS']);
       setTimeout(function(){ location.href = "gestionFiliere"; }, 300);
     }
 
+    onUpdateElement(){
+      this.crudFiliere.putRequest(this.crudFiliere.urlPut+this.crudFiliere.id,this.crudFiliere.filiereData);
+
+      setTimeout(function(){ location.href = "gestionFiliere"; }, 300);
+    }
+
 ngOnInit(): void {
 
 }

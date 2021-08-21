@@ -32,7 +32,27 @@
               </div>
             </div>
           </div>
-        </div></th>
+        </div>
+      <!-- Modal Modifier -->
+<div class="modal fade" id="modifierModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modifier filiere</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input nz-input placeholder="Nom de la filiere" [(ngModel)]="crudFiliere.filiereData.filiere" />
+                <button class="btn btn-primary" (click)="onUpdateElement()" >envoyer</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -41,7 +61,7 @@
   <td>{{response.filiere}}</td>
   <td>{{response.created_at}}</td>
   <td>{{response.updated_at}}</td>
-  <td><button class="btn btn-warning " style="margin-right: 2%;">Modifier</button><button class="btn btn-danger" (click)="onDeleteElement(response.id)" >Supprimer</button></td>
+  <td><button class="btn btn-warning " style="margin-right: 2%;"data-bs-toggle="modal" data-bs-target="#modifierModal" (click)="crudFiliere.id=response.id">Modifier</button><button class="btn btn-danger"  (click)="onDeleteElement(response.id)" >Supprimer</button></td>
  </tr>
   </tbody>
 </nz-table>
