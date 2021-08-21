@@ -63,6 +63,11 @@ this.router.navigate(['./confirmationSMS']);
 
     }
 
+    onDeleteElement(id:any){
+      this.crudFiliere.deleteRequest(this.crudFiliere.urlDelete+id);
+      setTimeout(function(){ location.href = "gestionFiliere"; }, 300);
+    }
+
 ngOnInit(): void {
 
 }

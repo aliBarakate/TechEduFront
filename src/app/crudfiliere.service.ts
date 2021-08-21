@@ -11,6 +11,7 @@ export class CrudfiliereService {
     filiere:"",
   }
   urlPost="http://127.0.0.1:8000/api/filiere";
+  urlDelete="http://127.0.0.1:8000/api/filieres/";
 
   constructor(private http: HttpClient) {
 
@@ -27,5 +28,12 @@ export class CrudfiliereService {
         this.responses=responses;
         console.log(responses);
     });
+  }
+  deleteRequest(urlDelete:string){
+    this.http.delete(urlDelete).subscribe();
+  }
+
+  putRequest(url: string, object: any){
+    this.http.put<any>(url, object).subscribe();
   }
 }
