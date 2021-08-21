@@ -23,30 +23,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <form #postForm="ngForm" (ngSubmit)="onCreatePost(postForm.value)">
-
-                  <div class="form-group">
-                    <label for="title">Nom de la filiére</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="name"
-                      required
-                      ngModel
-                      name="filiere"
-                    />
-                  </div>
-
-                  <button
-                    class="btn btn-primary"
-                    type="submit"
-                    [disabled]="!postForm.valid"
-
-                  >
-
-                    Enregistrer
-                  </button>
-                </form>
+                <input nz-input placeholder="Nom de la filiere" [(ngModel)]="crudFiliere.filiereData.filiere" />
+                <button class="btn btn-primary" (click)="onCreateNewFiliere()" >envoyer</button>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -58,7 +36,7 @@
     </tr>
   </thead>
   <tbody>
- <tr *ngFor="let response of responses" >
+ <tr *ngFor="let response of crudFiliere.responses" >
   <td>{{response.id}}</td>
   <td>{{response.filiere}}</td>
   <td>{{response.created_at}}</td>

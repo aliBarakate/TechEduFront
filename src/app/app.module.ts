@@ -26,6 +26,7 @@ import { CrudFiliereComponentComponent } from './crud-filiere-component/crud-fil
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { EditorPageComponent } from './editor-page/editor-page.component';
 import {EditorModule} from 'primeng/editor';
+import { CrudfiliereService } from './crudfiliere.service';
 registerLocaleData(fr);
 
 const appRoutes: Routes = [
@@ -69,7 +70,7 @@ const appRoutes: Routes = [
     NzTableModule,
     EditorModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: fr_FR }],
+  providers: [{ provide: NZ_I18N, useValue: fr_FR },CrudfiliereService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
