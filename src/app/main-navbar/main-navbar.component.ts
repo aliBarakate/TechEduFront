@@ -30,4 +30,7 @@ export class MainNavbarComponent implements OnInit {
   onLoadgestionFiliere(){
     this.router.navigate(['./gestionFiliere']);
   }
+  onLoadgestionNiveaux(){
+    this.router.navigate(['./gestionNiveaux']);
+  }
 }

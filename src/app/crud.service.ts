@@ -1,18 +1,30 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CrudfiliereService {
+export class CrudService {
   responses:any;
-  urlGet="http://127.0.0.1:8000/api/filieres";
+  //Crud-Filiere
+  urlFiliereGet=environment.host+"filieres";
+  urlFilierePost=environment.host+"filiere";
+  urlFiliereDelete=environment.host+"filieres/";
+  urlFilierePut=environment.host+"filieres/";
   filiereData={
     filiere:"",
   }
-  urlPost="http://127.0.0.1:8000/api/filiere";
-  urlDelete="http://127.0.0.1:8000/api/filieres/";
-  urlPut="http://127.0.0.1:8000/api/filieres/";
+  //////////////////////////////////////////////////////
+
+  //Crud-Niveaux
+  urlNiveauxGet=environment.host+"niveaux";
+  urlNiveauxPost=environment.host+"niveau";
+  urlNiveauxDelete=environment.host+"niveaux/";
+  urlNiveauxPut=environment.host+"niveaux/";
+  niveauxData={
+    niveau:"",
+  }
   id:any;
 
   constructor(private http: HttpClient) {

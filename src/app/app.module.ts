@@ -26,7 +26,8 @@ import { CrudFiliereComponentComponent } from './crud-filiere-component/crud-fil
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { EditorPageComponent } from './editor-page/editor-page.component';
 import {EditorModule} from 'primeng/editor';
-import { CrudfiliereService } from './crudfiliere.service';
+import { CrudService } from './crud.service';
+import { CrudNiveauComponent } from './crud-niveau/crud-niveau.component';
 registerLocaleData(fr);
 
 const appRoutes: Routes = [
@@ -37,6 +38,7 @@ const appRoutes: Routes = [
   { path: 'confirmationSMS',component: ConfirmationSmsPageComponent},
   { path: 'gestionFiliere',component: CrudFiliereComponentComponent},
   { path: 'pageEditor',component: EditorPageComponent},
+  { path: 'gestionNiveaux',component: CrudNiveauComponent},
 
 
 
@@ -56,7 +58,8 @@ const appRoutes: Routes = [
     InscriptionHttpSecondComponent,
     ConfirmationSmsPageComponent,
     CrudFiliereComponentComponent,
-    EditorPageComponent
+    EditorPageComponent,
+    CrudNiveauComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +73,7 @@ const appRoutes: Routes = [
     NzTableModule,
     EditorModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: fr_FR },CrudfiliereService],
+  providers: [{ provide: NZ_I18N, useValue: fr_FR },CrudService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

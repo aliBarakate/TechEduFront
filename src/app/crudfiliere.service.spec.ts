@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CrudfiliereService } from './crudfiliere.service';
+import { CrudfiliereService } from './crud.service';
 
 describe('CrudfiliereService', () => {
   let service: CrudfiliereService;
