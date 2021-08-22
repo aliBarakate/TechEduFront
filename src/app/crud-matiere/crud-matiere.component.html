@@ -1,17 +1,18 @@
 <app-main-navbar></app-main-navbar>
 
-<div class="container">
-  <h1 style="margin: 2%;text-align: center;">Gestion des filiéres</h1>
+<div class="container" style=" margin-top: 6%;">
+  <h1 style="margin: 2%;text-align: center;">Gestion des Matières</h1>
+
 <nz-table>
   <thead>
     <tr>
       <th>ID</th>
-      <th>Nom de la filiére</th>
+      <th>Nom de la matière</th>
       <th>Date de création</th>
       <th>Date de mise à jour</th>
       <th><!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Ajouter une nouvelle filiére
+          Ajouter une nouvelle matière
         </button>
 
         <!-- Modal -->
@@ -19,11 +20,11 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ajouter une nouvelle filiere</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Ajouter une nouvelle matière</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <input nz-input placeholder="Nom de la filiere" [(ngModel)]="crud.filiereData.filiere" />
+                <input nz-input placeholder="Nom de la matière" [(ngModel)]="crud.matiereData.matiere" />
                 <button class="btn btn-primary" (click)="onCreateNewElement()" >envoyer</button>
               </div>
               <div class="modal-footer">
@@ -38,11 +39,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modifier filiere</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Modifier niveau</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <input nz-input placeholder="Nom de la filiere" [(ngModel)]="crud.filiereData.filiere" />
+        <input nz-input placeholder="Nom de la filiere" [(ngModel)]="crud.matiereData.matiere" />
                 <button class="btn btn-primary" (click)="onUpdateElement()" >envoyer</button>
       </div>
       <div class="modal-footer">
@@ -58,7 +59,7 @@
   <tbody>
  <tr *ngFor="let response of crud.responses" >
   <td>{{response.id}}</td>
-  <td>{{response.filiere}}</td>
+  <td>{{response.matiere}}</td>
   <td>{{response.created_at}}</td>
   <td>{{response.updated_at}}</td>
   <td><button class="btn btn-warning " style="margin-right: 2%;"data-bs-toggle="modal" data-bs-target="#modifierModal" (click)="crud.id=response.id">Modifier</button><button class="btn btn-danger"  (click)="onDeleteElement(response.id)" >Supprimer</button></td>

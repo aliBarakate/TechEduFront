@@ -25,6 +25,17 @@ export class CrudService {
   niveauxData={
     niveau:"",
   }
+  ////////////////////////////////////////////////////////////
+
+  //Crud-matiere
+  urlMatiereGet=environment.host+"matieres";
+  urlMatierePost=environment.host+"matiere";
+  urlMatiereDelete=environment.host+"matiere/";
+  urlMatierePut=environment.host+"matiere/";
+  matiereData={
+    matiere:"",
+  }
+  ////////////////////////////////////////////////
   id:any;
 
   constructor(private http: HttpClient) {

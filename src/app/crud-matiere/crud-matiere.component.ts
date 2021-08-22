@@ -6,12 +6,12 @@ import { Router } from '@angular/router';
 import { CrudService } from '../crud.service';
 
 @Component({
-  selector: 'app-crud-filiere-component',
-  templateUrl: './crud-filiere-component.component.html',
-  styleUrls: ['./crud-filiere-component.component.css'],
+  selector: 'app-crud-matiere',
+  templateUrl: './crud-matiere.component.html',
+  styleUrls: ['./crud-matiere.component.css'],
   providers : [CrudService],
 })
-export class CrudFiliereComponentComponent implements OnInit {
+export class CrudMatiereComponent implements OnInit {
   responses:any;
   http:any;
   suivantactivated =false;
@@ -20,7 +20,7 @@ export class CrudFiliereComponentComponent implements OnInit {
   constructor(http: HttpClient,private router : Router,public crud:CrudService) {
 
 
-    this.crud.getRequest(this.crud.urlFiliereGet);
+    this.crud.getRequest(this.crud.urlMatiereGet);
 
   }
 
@@ -55,7 +55,7 @@ this.router.navigate(['./confirmationSMS']);
 }
 
     onCreateNewElement(){
-      this.crud.sendRequest(this.crud.urlFilierePost,this.crud.filiereData);
+      this.crud.sendRequest(this.crud.urlMatierePost,this.crud.matiereData);
 
       //setTimeout(function(){ location.href = "gestionFiliere"; }, 300);
       this.multipleGetRequest();
@@ -64,19 +64,19 @@ this.router.navigate(['./confirmationSMS']);
     }
 
     onDeleteElement(id:any){
-      this.crud.deleteRequest(this.crud.urlFiliereDelete+id);
+      this.crud.deleteRequest(this.crud.urlMatiereDelete+id);
       this.multipleGetRequest();
     }
 
     onUpdateElement(){
-      this.crud.putRequest(this.crud.urlFilierePut+this.crud.id,this.crud.filiereData);
+      this.crud.putRequest(this.crud.urlMatierePut+this.crud.id,this.crud.matiereData);
 
       this.multipleGetRequest();
     }
 
     multipleGetRequest(){
       for ( let i = 0; i < 5; i++) {
-        this.crud.getRequest(this.crud.urlFiliereGet);
+        this.crud.getRequest(this.crud.urlMatiereGet);
       }
     }
 

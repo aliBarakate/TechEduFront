@@ -33,4 +33,7 @@ export class MainNavbarComponent implements OnInit {
   onLoadgestionNiveaux(){
     this.router.navigate(['./gestionNiveaux']);
   }
+  onLoadgestionMatieres(){
+    this.router.navigate(['./gestionMatiere']);
+  }
 }

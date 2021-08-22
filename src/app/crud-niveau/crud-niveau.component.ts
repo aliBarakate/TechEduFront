@@ -54,7 +54,7 @@ onLoadLoginPage(){
 this.router.navigate(['./confirmationSMS']);
 }
 
-    onCreateNewFiliere(){
+    onCreateNewElement(){
       this.crud.sendRequest(this.crud.urlNiveauxPost,this.crud.niveauxData);
 
       //setTimeout(function(){ location.href = "gestionFiliere"; }, 300);
