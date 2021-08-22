@@ -57,21 +57,27 @@ this.router.navigate(['./confirmationSMS']);
     onCreateNewFiliere(){
       this.crudFiliere.sendRequest(this.crudFiliere.urlPost,this.crudFiliere.filiereData);
 
-      setTimeout(function(){ location.href = "gestionFiliere"; }, 300);
-
+      //setTimeout(function(){ location.href = "gestionFiliere"; }, 300);
+      this.multipleGetRequest();
 
 
     }
 
     onDeleteElement(id:any){
       this.crudFiliere.deleteRequest(this.crudFiliere.urlDelete+id);
-      setTimeout(function(){ location.href = "gestionFiliere"; }, 300);
+      this.multipleGetRequest();
     }
 
     onUpdateElement(){
       this.crudFiliere.putRequest(this.crudFiliere.urlPut+this.crudFiliere.id,this.crudFiliere.filiereData);
 
-      setTimeout(function(){ location.href = "gestionFiliere"; }, 300);
+      this.multipleGetRequest();
+    }
+
+    multipleGetRequest(){
+      for ( let i = 0; i < 5; i++) {
+        this.crudFiliere.getRequest(this.crudFiliere.urlGet);
+      }
     }
 
 ngOnInit(): void {
