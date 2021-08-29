@@ -7,6 +7,9 @@ import { environment } from 'src/environments/environment';
 })
 export class CrudService {
   responses:any;
+  sendData={
+    name:"",
+  }
   //Crud-Filiere
   urlFiliereGet=environment.host+"filieres";
   urlFilierePost=environment.host+"filiere";

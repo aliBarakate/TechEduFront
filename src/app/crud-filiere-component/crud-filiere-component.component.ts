@@ -55,7 +55,7 @@ this.router.navigate(['./confirmationSMS']);
 }
 
     onCreateNewElement(){
-      this.crud.sendRequest(this.crud.urlFilierePost,this.crud.filiereData);
+      this.crud.sendRequest(this.crud.urlFilierePost,this.crud.sendData);
 
       //setTimeout(function(){ location.href = "gestionFiliere"; }, 300);
       this.multipleGetRequest();
@@ -69,7 +69,7 @@ this.router.navigate(['./confirmationSMS']);
     }
 
     onUpdateElement(){
-      this.crud.putRequest(this.crud.urlFilierePut+this.crud.id,this.crud.filiereData);
+      this.crud.putRequest(this.crud.urlFilierePut+this.crud.id,this.crud.sendData);
 
       this.multipleGetRequest();
     }

@@ -23,7 +23,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <input nz-input placeholder="Nom de la filiere" [(ngModel)]="crud.filiereData.filiere" />
+                <input nz-input placeholder="Nom de la filiere" [(ngModel)]="crud.sendData.name" />
                 <button class="btn btn-primary" (click)="onCreateNewElement()" >envoyer</button>
               </div>
               <div class="modal-footer">
@@ -42,7 +42,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <input nz-input placeholder="Nom de la filiere" [(ngModel)]="crud.filiereData.filiere" />
+        <input nz-input placeholder="Nom de la filiere" [(ngModel)]="crud.sendData.name" />
                 <button class="btn btn-primary" (click)="onUpdateElement()" >envoyer</button>
       </div>
       <div class="modal-footer">
@@ -58,7 +58,7 @@
   <tbody>
  <tr *ngFor="let response of crud.responses" >
   <td>{{response.id}}</td>
-  <td>{{response.filiere}}</td>
+  <td>{{response.name}}</td>
   <td>{{response.created_at}}</td>
   <td>{{response.updated_at}}</td>
   <td><button class="btn btn-warning " style="margin-right: 2%;"data-bs-toggle="modal" data-bs-target="#modifierModal" (click)="crud.id=response.id">Modifier</button><button class="btn btn-danger"  (click)="onDeleteElement(response.id)" >Supprimer</button></td>
