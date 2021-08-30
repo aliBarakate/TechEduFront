@@ -30,6 +30,8 @@ import { CrudService } from './crud.service';
 import { CrudNiveauComponent } from './crud-niveau/crud-niveau.component';
 import { CrudMatiereComponent } from './crud-matiere/crud-matiere.component';
 import { CrudCycleComponent } from './crud-cycle/crud-cycle.component';
+import {DropdownModule} from 'primeng/dropdown';
+import {InputTextModule} from 'primeng/inputtext';
 registerLocaleData(fr);
 
 const appRoutes: Routes = [
@@ -77,7 +79,9 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     NzResultModule,
     NzTableModule,
-    EditorModule
+    EditorModule,
+    DropdownModule,
+    InputTextModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: fr_FR },CrudService],
   bootstrap: [AppComponent]

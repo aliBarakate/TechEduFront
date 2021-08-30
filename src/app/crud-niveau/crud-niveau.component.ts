@@ -5,6 +5,11 @@ import {NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
 import { CrudService } from '../crud.service';
 
+interface City {
+  name: string,
+  code: string
+}
+
 @Component({
   selector: 'app-crud-niveau',
   templateUrl: './crud-niveau.component.html',
@@ -12,13 +17,26 @@ import { CrudService } from '../crud.service';
   providers : [CrudService],
 })
 export class CrudNiveauComponent implements OnInit {
+  cities: City[];
+
+  selectedCity: any;
+
+  is_active_dropdown:Boolean;
   responses:any;
   http:any;
   suivantactivated =false;
   millisecondsToWait = 500;
 
   constructor(http: HttpClient,private router : Router,public crud:CrudService) {
+    this.is_active_dropdown= false;
 
+    this.cities = [
+      {name: 'New York', code: 'NY'},
+      {name: 'Rome', code: 'RM'},
+      {name: 'London', code: 'LDN'},
+      {name: 'Istanbul', code: 'IST'},
+      {name: 'Paris', code: 'PRS'}
+  ];
 
     this.crud.getRequest(this.crud.urlNiveauxGet);
     this.crud.getRequest(this.crud.urlCycleGet);
@@ -78,6 +96,15 @@ this.router.navigate(['./confirmationSMS']);
     multipleGetRequest(){
       for ( let i = 0; i < 5; i++) {
         this.crud.getRequest(this.crud.urlNiveauxGet);
+      }
+    }
+
+    onClickDropDown(){
+      if (this.is_active_dropdown==false){
+        this.is_active_dropdown=true;
+      }
+      else{
+        this.is_active_dropdown=false;
       }
     }
 
