@@ -1,18 +1,17 @@
 <app-main-navbar></app-main-navbar>
 
-<div class="container" style=" margin-top: 6%;">
-  <h1 style="margin: 2%;text-align: center;">Gestion des Matières</h1>
-
+<div class="container">
+  <h1 style="margin: 2%;text-align: center;">Gestion des cycles</h1>
 <nz-table>
   <thead>
     <tr>
       <th>ID</th>
-      <th>Nom de la matière</th>
+      <th>Nom de la filiére</th>
       <th>Date de création</th>
       <th>Date de mise à jour</th>
       <th><!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Ajouter une nouvelle matière
+          Ajouter une nouvelle filiére
         </button>
 
         <!-- Modal -->
@@ -20,13 +19,12 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ajouter une nouvelle matière</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Ajouter une nouvelle filiere</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <input nz-input placeholder="Nom de la matière" [(ngModel)]="crud.sendData.name" />
-                <br>
-
+                <input nz-input placeholder="Nom de la filiere" [(ngModel)]="crud.sendData.name" />
+                <button class="btn btn-primary" (click)="onCreateNewElement()" >envoyer</button>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -40,7 +38,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modifier niveau</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Modifier filiere</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

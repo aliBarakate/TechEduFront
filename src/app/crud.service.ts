@@ -16,7 +16,7 @@ export class CrudService {
   urlFiliereDelete=environment.host+"filieres/";
   urlFilierePut=environment.host+"filieres/";
   filiereData={
-    filiere:"",
+    name:"",
   }
   //////////////////////////////////////////////////////
 
@@ -38,6 +38,16 @@ export class CrudService {
   matiereData={
     matiere:"",
   }
+  ////////////////////////////////////////////////
+
+    ////////////////////////////////////////////////////////////
+
+  //Crud-cycle
+  urlCycleGet=environment.host+"cycles";
+  urlCyclePost=environment.host+"cycle";
+  urlCycleDelete=environment.host+"cycle/";
+  urlCyclePut=environment.host+"cycle/";
+
   ////////////////////////////////////////////////
   id:any;
 

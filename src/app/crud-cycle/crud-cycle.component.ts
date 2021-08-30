@@ -6,12 +6,12 @@ import { Router } from '@angular/router';
 import { CrudService } from '../crud.service';
 
 @Component({
-  selector: 'app-crud-niveau',
-  templateUrl: './crud-niveau.component.html',
-  styleUrls: ['./crud-niveau.component.css'],
+  selector: 'app-crud-cycle',
+  templateUrl: './crud-cycle.component.html',
+  styleUrls: ['./crud-cycle.component.css'],
   providers : [CrudService],
 })
-export class CrudNiveauComponent implements OnInit {
+export class CrudCycleComponent implements OnInit {
   responses:any;
   http:any;
   suivantactivated =false;
@@ -20,7 +20,6 @@ export class CrudNiveauComponent implements OnInit {
   constructor(http: HttpClient,private router : Router,public crud:CrudService) {
 
 
-    this.crud.getRequest(this.crud.urlNiveauxGet);
     this.crud.getRequest(this.crud.urlCycleGet);
 
   }
@@ -56,7 +55,7 @@ this.router.navigate(['./confirmationSMS']);
 }
 
     onCreateNewElement(){
-      this.crud.sendRequest(this.crud.urlNiveauxPost,this.crud.niveauxData);
+      this.crud.sendRequest(this.crud.urlCyclePost,this.crud.sendData);
 
       //setTimeout(function(){ location.href = "gestionFiliere"; }, 300);
       this.multipleGetRequest();
@@ -65,19 +64,19 @@ this.router.navigate(['./confirmationSMS']);
     }
 
     onDeleteElement(id:any){
-      this.crud.deleteRequest(this.crud.urlNiveauxDelete+id);
+      this.crud.deleteRequest(this.crud.urlCycleDelete+id);
       this.multipleGetRequest();
     }
 
     onUpdateElement(){
-      this.crud.putRequest(this.crud.urlNiveauxPut+this.crud.id,this.crud.niveauxData);
+      this.crud.putRequest(this.crud.urlCyclePut+this.crud.id,this.crud.sendData);
 
       this.multipleGetRequest();
     }
 
     multipleGetRequest(){
       for ( let i = 0; i < 5; i++) {
-        this.crud.getRequest(this.crud.urlNiveauxGet);
+        this.crud.getRequest(this.crud.urlCycleGet);
       }
     }
 
@@ -86,4 +85,3 @@ ngOnInit(): void {
 }
 
 }
-

@@ -29,6 +29,7 @@ import {EditorModule} from 'primeng/editor';
 import { CrudService } from './crud.service';
 import { CrudNiveauComponent } from './crud-niveau/crud-niveau.component';
 import { CrudMatiereComponent } from './crud-matiere/crud-matiere.component';
+import { CrudCycleComponent } from './crud-cycle/crud-cycle.component';
 registerLocaleData(fr);
 
 const appRoutes: Routes = [
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
   { path: 'pageEditor',component: EditorPageComponent},
   { path: 'gestionNiveaux',component: CrudNiveauComponent},
   { path: 'gestionMatiere',component: CrudMatiereComponent},
+  { path: 'gestionCycles',component: CrudCycleComponent},
 
 
 
@@ -62,7 +64,8 @@ const appRoutes: Routes = [
     CrudFiliereComponentComponent,
     EditorPageComponent,
     CrudNiveauComponent,
-    CrudMatiereComponent
+    CrudMatiereComponent,
+    CrudCycleComponent
   ],
   imports: [
     BrowserModule,
