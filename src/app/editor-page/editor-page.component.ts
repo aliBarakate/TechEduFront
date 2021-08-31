@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditorPageComponent implements OnInit {
   text: any;
+  text2:any;
   constructor() { }
 
   ngOnInit(): void {
