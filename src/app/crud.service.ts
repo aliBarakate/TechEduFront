@@ -13,7 +13,7 @@ export class CrudService {
   //Crud-Filiere
   urlFiliereGet=environment.host+"filieres";
   urlFilierePost=environment.host+"filiere";
-  urlFiliereDelete=environment.host+"filieres/";
+  urlFiliereDelete=environment.host+"filiere/";
   urlFilierePut=environment.host+"filieres/";
   filiereData={
     name:"",
@@ -26,7 +26,7 @@ export class CrudService {
   urlNiveauxDelete=environment.host+"niveaux/";
   urlNiveauxPut=environment.host+"niveaux/";
   niveauxData={
-    niveau:"",
+    name:"",
   }
   ////////////////////////////////////////////////////////////
 
@@ -49,6 +49,15 @@ export class CrudService {
   urlCyclePut=environment.host+"cycle/";
 
   ////////////////////////////////////////////////
+
+
+    //Crud-corbeille-matiere
+    urlCorbeilleMatiereGet=environment.host+"matiereCorbeille";
+    urlCorbeilleMatierePost=environment.host+"matiere";
+    urlCorbeilleMatiereDelete=environment.host+"matiere/";
+    urlCorbeilleMatierePut=environment.host+"matiere/";
+
+    ////////////////////////////////////////////////
   id:any;
 
   constructor(private http: HttpClient) {

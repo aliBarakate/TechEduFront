@@ -5,41 +5,22 @@ import {NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
 import { CrudService } from '../crud.service';
 
-interface City {
-  name: string,
-  code: string
-}
-
 @Component({
-  selector: 'app-crud-niveau',
-  templateUrl: './crud-niveau.component.html',
-  styleUrls: ['./crud-niveau.component.css'],
+  selector: 'app-corbeille-matiere',
+  templateUrl: './corbeille-matiere.component.html',
+  styleUrls: ['./corbeille-matiere.component.css'],
   providers : [CrudService],
 })
-export class CrudNiveauComponent implements OnInit {
-  cities: City[];
-
-  selectedCity: any;
-
-  is_active_dropdown:Boolean;
+export class CorbeilleMatiereComponent implements OnInit {
   responses:any;
   http:any;
   suivantactivated =false;
   millisecondsToWait = 500;
 
   constructor(http: HttpClient,private router : Router,public crud:CrudService) {
-    this.is_active_dropdown= false;
 
-    this.cities = [
-      {name: 'New York', code: 'NY'},
-      {name: 'Rome', code: 'RM'},
-      {name: 'London', code: 'LDN'},
-      {name: 'Istanbul', code: 'IST'},
-      {name: 'Paris', code: 'PRS'}
-  ];
 
-    this.crud.getRequest(this.crud.urlNiveauxGet);
-
+    this.crud.getRequest(this.crud.urlCorbeilleMatiereGet);
 
   }
 
@@ -74,7 +55,7 @@ this.router.navigate(['./confirmationSMS']);
 }
 
     onCreateNewElement(){
-      this.crud.sendRequest(this.crud.urlNiveauxPost,this.crud.niveauxData);
+      this.crud.sendRequest(this.crud.urlMatierePost,this.crud.sendData);
 
       //setTimeout(function(){ location.href = "gestionFiliere"; }, 300);
       this.multipleGetRequest();
@@ -83,28 +64,19 @@ this.router.navigate(['./confirmationSMS']);
     }
 
     onDeleteElement(id:any){
-      this.crud.deleteRequest(this.crud.urlNiveauxDelete+id);
+      this.crud.deleteRequest(this.crud.urlMatiereDelete+id);
       this.multipleGetRequest();
     }
 
     onUpdateElement(){
-      this.crud.putRequest(this.crud.urlNiveauxPut+this.crud.id,this.crud.niveauxData);
+      this.crud.putRequest(this.crud.urlMatierePut+this.crud.id,this.crud.sendData);
 
       this.multipleGetRequest();
     }
 
     multipleGetRequest(){
       for ( let i = 0; i < 5; i++) {
-        this.crud.getRequest(this.crud.urlNiveauxGet);
-      }
-    }
-
-    onClickDropDown(){
-      if (this.is_active_dropdown==false){
-        this.is_active_dropdown=true;
-      }
-      else{
-        this.is_active_dropdown=false;
+        this.crud.getRequest(this.crud.urlCorbeilleMatiereGet);
       }
     }
 
@@ -113,4 +85,3 @@ ngOnInit(): void {
 }
 
 }
-

@@ -39,4 +39,7 @@ export class MainNavbarComponent implements OnInit {
   onLoadgestionCycles(){
     this.router.navigate(['./gestionCycles']);
   }
+  onLoadCorbeilleMatiere(){
+    this.router.navigate(['./corbeilleMatiere']);
+  }
 }

@@ -32,6 +32,7 @@ import { CrudMatiereComponent } from './crud-matiere/crud-matiere.component';
 import { CrudCycleComponent } from './crud-cycle/crud-cycle.component';
 import {DropdownModule} from 'primeng/dropdown';
 import {InputTextModule} from 'primeng/inputtext';
+import { CorbeilleMatiereComponent } from './corbeille-matiere/corbeille-matiere.component';
 registerLocaleData(fr);
 
 const appRoutes: Routes = [
@@ -45,6 +46,7 @@ const appRoutes: Routes = [
   { path: 'gestionNiveaux',component: CrudNiveauComponent},
   { path: 'gestionMatiere',component: CrudMatiereComponent},
   { path: 'gestionCycles',component: CrudCycleComponent},
+  { path: 'corbeilleMatiere',component: CorbeilleMatiereComponent},
 
 
 
@@ -67,7 +69,8 @@ const appRoutes: Routes = [
     EditorPageComponent,
     CrudNiveauComponent,
     CrudMatiereComponent,
-    CrudCycleComponent
+    CrudCycleComponent,
+    CorbeilleMatiereComponent
   ],
   imports: [
     BrowserModule,
