@@ -33,6 +33,8 @@ import { CrudCycleComponent } from './crud-cycle/crud-cycle.component';
 import {DropdownModule} from 'primeng/dropdown';
 import {InputTextModule} from 'primeng/inputtext';
 import { CorbeilleMatiereComponent } from './corbeille-matiere/corbeille-matiere.component';
+import { KatexModule } from 'ng-katex';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 registerLocaleData(fr);
 
 const appRoutes: Routes = [
@@ -85,6 +87,8 @@ const appRoutes: Routes = [
     EditorModule,
     DropdownModule,
     InputTextModule,
+    KatexModule,
+    InputTextareaModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: fr_FR },CrudService],
   bootstrap: [AppComponent]

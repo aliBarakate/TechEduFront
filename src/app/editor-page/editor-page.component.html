@@ -30,4 +30,9 @@
     </ng-template>
 </p-editor>
 <p>Value: {{text2||'empty'}}</p>
+<!-- <ng-katex-html [html]="text2"></ng-katex-html> -->
+<!-- <ng-katex-paragraph [paragraph]="text2"></ng-katex-paragraph> -->
+<!-- <ng-katex-html [html]="text2"></ng-katex-html> -->
+<textarea pInputTextarea [(ngModel)]="text2"></textarea>
+<ng-katex-paragraph [paragraph]="text2"></ng-katex-paragraph>
 </div>
