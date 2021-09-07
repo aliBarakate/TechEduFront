@@ -1,7 +1,7 @@
 <app-main-navbar></app-main-navbar>
 
 <div class="container" style=" margin-top: 6%;">
-  <h1 style="margin: 2%;text-align: center;">Gestion des niveaux</h1>
+  <h1 style="margin: 2%;text-align: center;">Gestion des niveaux du cycle : {{ this.cycle }}</h1>
 
 <nz-table>
   <thead>
@@ -11,7 +11,7 @@
       <th>Date de création</th>
       <th>Date de mise à jour</th>
       <th><!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="afficher()">
           Ajouter un nouveau niveau
         </button>
 

@@ -80,6 +80,14 @@ this.router.navigate(['./confirmationSMS']);
       }
     }
 
+    onClickAfficherBtn(cycleId:string){
+      this.crud.selectedCycle=cycleId;
+
+     
+       console.log(this.crud.selectedCycle);
+      this.router.navigate(['./gestionNiveaux']);
+    }
+
 ngOnInit(): void {
 
 }

@@ -4,6 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import {NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
 import { CrudService } from '../crud.service';
+import { Subscription } from 'rxjs';
 
 interface City {
   name: string,
@@ -18,6 +19,7 @@ interface City {
 })
 export class CrudNiveauComponent implements OnInit {
   cities: City[];
+  cycle:any;
 
   selectedCity: any;
 
@@ -26,8 +28,13 @@ export class CrudNiveauComponent implements OnInit {
   http:any;
   suivantactivated =false;
   millisecondsToWait = 500;
+  message:any;
+
+  subscription: Subscription|null=null;
 
   constructor(http: HttpClient,private router : Router,public crud:CrudService) {
+    console.log(crud.selectedCycle);
+    
     this.is_active_dropdown= false;
 
     this.cities = [
@@ -38,7 +45,8 @@ export class CrudNiveauComponent implements OnInit {
       {name: 'Paris', code: 'PRS'}
   ];
 
-    this.crud.getRequest(this.crud.urlNiveauxGet);
+    this.crud.getRequest(this.crud.urlNiveauxGet+this.crud.selectedCycle);
+    console.log(this.crud.urlNiveauxGet+this.crud.selectedCycle);
 
 
   }
@@ -108,7 +116,19 @@ this.router.navigate(['./confirmationSMS']);
       }
     }
 
+    afficher(){
+      console.log(this.crud.selectedCycle);
+    }
+
 ngOnInit(): void {
+
+  this.crud.getRequest(this.crud.urlNiveauxGet+this.crud.selectedCycle);
+  console.log(this.crud.urlNiveauxGet+this.crud.selectedCycle);
+ 
+
+ 
+
+
 
 }
 

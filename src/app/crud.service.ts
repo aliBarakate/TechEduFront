@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { BehaviorSubject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +23,7 @@ export class CrudService {
   //////////////////////////////////////////////////////
 
   //Crud-Niveaux
-  urlNiveauxGet=environment.host+"niveaux";
+  urlNiveauxGet=environment.host+"niveauxCycle/";
   urlNiveauxPost=environment.host+"niveau";
   urlNiveauxDelete=environment.host+"niveaux/";
   urlNiveauxPut=environment.host+"niveaux/";
@@ -58,6 +60,13 @@ export class CrudService {
     urlCorbeilleMatierePut=environment.host+"matiere/";
 
     ////////////////////////////////////////////////
+// Element selectinne///////////////////////
+selectedCycle:any;
+selectedNiveau:any;
+selectedFiliere:any;
+
+
+
   id:any;
 
   constructor(private http: HttpClient) {
