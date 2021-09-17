@@ -23,7 +23,7 @@ export class CrudService {
   //////////////////////////////////////////////////////
 
   //Crud-Niveaux
-  urlNiveauxGet=environment.host+"niveauxCycle/";
+  urlNiveauxGet=environment.host+"niveauxCycle/6";
   urlNiveauxPost=environment.host+"niveau";
   urlNiveauxDelete=environment.host+"niveaux/";
   urlNiveauxPut=environment.host+"niveaux/";

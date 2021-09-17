@@ -120,6 +120,14 @@ this.router.navigate(['./confirmationSMS']);
       console.log(this.crud.selectedCycle);
     }
 
+    onClickAfficherBtn(cycleId:string){
+      this.crud.selectedCycle=cycleId;
+
+     
+       console.log(this.crud.selectedCycle);
+       this.router.navigate(['./gestionFiliere']);
+    }
+
 ngOnInit(): void {
 
   this.crud.getRequest(this.crud.urlNiveauxGet+this.crud.selectedCycle);
