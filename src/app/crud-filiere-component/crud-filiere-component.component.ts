@@ -8,8 +8,7 @@ import { CrudService } from '../crud.service';
 @Component({
   selector: 'app-crud-filiere-component',
   templateUrl: './crud-filiere-component.component.html',
-  styleUrls: ['./crud-filiere-component.component.css'],
-  providers : [CrudService],
+  styleUrls: ['./crud-filiere-component.component.css']
 })
 export class CrudFiliereComponentComponent implements OnInit {
   responses:any;

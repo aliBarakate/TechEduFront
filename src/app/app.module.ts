@@ -90,7 +90,7 @@ const appRoutes: Routes = [
     KatexModule,
     InputTextareaModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: fr_FR },CrudService],
+  providers: [{ provide: NZ_I18N, useValue: fr_FR }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,7 +15,6 @@ interface City {
   selector: 'app-crud-niveau',
   templateUrl: './crud-niveau.component.html',
   styleUrls: ['./crud-niveau.component.css'],
-  providers : [CrudService],
 })
 export class CrudNiveauComponent implements OnInit {
   cities: City[];
