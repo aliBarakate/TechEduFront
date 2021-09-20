@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from 'src/environments/environment';
+import {tryCatch} from "rxjs/internal-compatibility";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class CrudService {
   selectedNiveau: any;
   selectedFiliere: any;
   responses: any;
+  messageReturned: any;
   sendData = {
     name: "",
   }
@@ -25,7 +27,7 @@ export class CrudService {
   //////////////////////////////////////////////////////
 
   //Crud-Niveaux
-  urlNiveauxGet = environment.host + "niveauxCycle/";
+  urlNiveauxGetForCycle = environment.host + "niveauxCycle/";
   urlNiveauxPost = environment.host + "niveau";
   urlNiveauxDelete = environment.host + "niveaux/";
   urlNiveauxPut = environment.host + "niveaux/";
@@ -83,7 +85,19 @@ export class CrudService {
   }
 
   deleteRequest(urlDelete: string) {
-    this.http.delete(urlDelete).subscribe();
+    this.http.delete(urlDelete).subscribe(        (response) => {                           //Next callback
+        console.log('response received')
+        this.responses = response;
+      },
+      (error) => {
+      //Error callback
+      this.messageReturned=error.error.text;
+        console.error(error.error.text);
+        console.log(this.messageReturned)
+
+        //throw error;   //You can also throw the error to a global error handler
+      }
+    );
   }
 
   putRequest(url: string, object: any) {

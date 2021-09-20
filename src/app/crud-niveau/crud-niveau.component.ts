@@ -18,8 +18,8 @@ export class CrudNiveauComponent implements OnInit {
 
   constructor(http: HttpClient, private router: Router, public crud: CrudService) {
     console.log(crud.selectedCycle);
-    this.crud.getRequest(this.crud.urlNiveauxGet + this.crud.selectedCycle);
-    console.log(this.crud.urlNiveauxGet + this.crud.selectedCycle);
+    this.crud.getRequest(this.crud.urlNiveauxGetForCycle + this.crud.selectedCycle);
+    console.log(this.crud.urlNiveauxGetForCycle + this.crud.selectedCycle);
   }
 
 
@@ -45,7 +45,7 @@ export class CrudNiveauComponent implements OnInit {
 
   multipleGetRequest() {
     for (let i = 0; i < 5; i++) {
-      this.crud.getRequest(this.crud.urlNiveauxGet);
+      this.crud.getRequest(this.crud.urlNiveauxGetForCycle + this.crud.selectedCycle);
     }
   }
 
