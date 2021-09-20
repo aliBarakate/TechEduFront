@@ -2,17 +2,19 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from 'src/environments/environment';
 import {tryCatch} from "rxjs/internal-compatibility";
+import {MessageService} from "primeng/api";
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class CrudService {
   // Element selectinne///////////////////////
   selectedCycle: any;
   selectedNiveau: any;
   selectedFiliere: any;
   responses: any;
-  messageReturned: any;
+  messageReturned: string="ceci est le detail du toast";
   sendData = {
     name: "",
   }
@@ -67,8 +69,11 @@ export class CrudService {
   ////////////////////////////////////////////////
   id: any;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private messageService: MessageService) {
 
+  }
+  showInfoDelete() {
+    this.messageService.add({severity:'info', summary: 'Info', detail: this.messageReturned});
   }
 
   sendRequest(url: string, object: any) {
@@ -94,7 +99,7 @@ export class CrudService {
       this.messageReturned=error.error.text;
         console.error(error.error.text);
         console.log(this.messageReturned)
-
+        this.showInfoDelete();
         //throw error;   //You can also throw the error to a global error handler
       }
     );

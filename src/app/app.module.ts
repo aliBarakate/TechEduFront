@@ -35,6 +35,8 @@ import {InputTextModule} from 'primeng/inputtext';
 import { CorbeilleMatiereComponent } from './corbeille-matiere/corbeille-matiere.component';
 import { KatexModule } from 'ng-katex';
 import {InputTextareaModule} from 'primeng/inputtextarea';
+import {ToastModule} from 'primeng/toast';
+import {MessageService} from "primeng/api";
 registerLocaleData(fr);
 
 const appRoutes: Routes = [
@@ -89,8 +91,9 @@ const appRoutes: Routes = [
     InputTextModule,
     KatexModule,
     InputTextareaModule,
+    ToastModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: fr_FR }],
+  providers: [{ provide: NZ_I18N, useValue: fr_FR },MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
