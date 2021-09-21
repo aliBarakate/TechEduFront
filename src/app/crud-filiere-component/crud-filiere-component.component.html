@@ -2,6 +2,7 @@
 
 <div class="container">
   <h1 style="margin: 2%;text-align: center;">Gestion des filiéres</h1>
+  <p-toast></p-toast>
 <nz-table>
   <thead>
     <tr>
@@ -23,8 +24,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <input nz-input placeholder="Nom de la filiere" [(ngModel)]="crud.sendData.name" />
-                <button class="btn btn-primary" (click)="onCreateNewElement()" >envoyer</button>
+                <input nz-input placeholder="Nom de la filiere" [(ngModel)]="crud.filiereData.name" />
+                <button class="btn btn-primary" (click)="onCreateNewElement()">envoyer</button>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -42,7 +43,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <input nz-input placeholder="Nom de la filiere" [(ngModel)]="crud.sendData.name" />
+        <input nz-input placeholder="Nom de la filiere" [(ngModel)]="crud.filiereData.name" />
                 <button class="btn btn-primary" (click)="onUpdateElement()" >envoyer</button>
       </div>
       <div class="modal-footer">

@@ -19,12 +19,13 @@ export class CrudService {
     name: "",
   }
   //Crud-Filiere
-  urlFiliereGet = environment.host + "filieres";
+  urlFiliereGet = environment.host + "filieresNiveau/";
   urlFilierePost = environment.host + "filiere";
   urlFiliereDelete = environment.host + "filiere/";
   urlFilierePut = environment.host + "filieres/";
   filiereData = {
     name: "",
+    niveau_id:"",
   }
   //////////////////////////////////////////////////////
 

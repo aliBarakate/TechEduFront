@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { FormBuilder } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {FormBuilder} from '@angular/forms';
 import {NgForm} from '@angular/forms';
-import { Router } from '@angular/router';
-import { CrudService } from '../crud.service';
+import {Router} from '@angular/router';
+import {CrudService} from '../crud.service';
 
 @Component({
   selector: 'app-crud-filiere-component',
@@ -11,84 +11,49 @@ import { CrudService } from '../crud.service';
   styleUrls: ['./crud-filiere-component.component.css']
 })
 export class CrudFiliereComponentComponent implements OnInit {
-  responses:any;
-  http:any;
-  suivantactivated =false;
-  millisecondsToWait = 500;
-
-  constructor(http: HttpClient,private router : Router,public crud:CrudService) {
+  responses: any;
+  http: any;
 
 
-    this.crud.getRequest(this.crud.urlFiliereGet);
+  constructor(http: HttpClient, private router: Router, public crud: CrudService) {
+    console.log("l'id du niveau séléctioné est :"+this.crud.selectedNiveau)
+
+    this.crud.getRequest(this.crud.urlFiliereGet+this.crud.selectedNiveau);
+    this.crud.filiereData.niveau_id=this.crud.selectedNiveau;
 
   }
 
-  onCreatePost(postData: {filiere: string;
+  onCreateNewElement() {
+    this.crud.sendRequest(this.crud.urlFilierePost, this.crud.filiereData);
+    this.multipleGetRequest();
+  }
 
-      }) {
-// Send Http request
+  onDeleteElement(id: any) {
+    this.crud.deleteRequest(this.crud.urlFiliereDelete + id);
+    this.multipleGetRequest();
+  }
 
-this.http
-.post(
-'http://127.0.0.1:8000/api/filiere',
-postData
-)
-.subscribe((responseData: any) => {
-  console.log(responseData);
-});
-}
+  onUpdateElement() {
+    this.crud.putRequest(this.crud.urlFilierePut + this.crud.id, this.crud.filiereData);
+    this.multipleGetRequest();
+  }
 
-onSelectedElementList(){
-
-}
-activatesuivant(){
-this.suivantactivated=true;
-}
-relocate_home()
-{
-location.href = "gestionFiliere";
-}
-
-onLoadLoginPage(){
-this.router.navigate(['./confirmationSMS']);
-}
-
-    onCreateNewElement(){
-      this.crud.sendRequest(this.crud.urlFilierePost,this.crud.sendData);
-
-      //setTimeout(function(){ location.href = "gestionFiliere"; }, 300);
-      this.multipleGetRequest();
-
-
+  multipleGetRequest() {
+    for (let i = 0; i < 5; i++) {
+      this.crud.getRequest(this.crud.urlFiliereGet+this.crud.selectedNiveau);
     }
+  }
 
-    onDeleteElement(id:any){
-      this.crud.deleteRequest(this.crud.urlFiliereDelete+id);
-      this.multipleGetRequest();
-    }
+  onClickAfficherBtn(cycleId: string) {
+    this.crud.selectedCycle = cycleId;
 
-    onUpdateElement(){
-      this.crud.putRequest(this.crud.urlFilierePut+this.crud.id,this.crud.sendData);
 
-      this.multipleGetRequest();
-    }
+    console.log(this.crud.selectedCycle);
+    this.router.navigate(['./gestionMatiere']);
+  }
 
-    multipleGetRequest(){
-      for ( let i = 0; i < 5; i++) {
-        this.crud.getRequest(this.crud.urlFiliereGet);
-      }
-    }
+  ngOnInit(): void {
 
-    onClickAfficherBtn(cycleId:string){
-      this.crud.selectedCycle=cycleId;
-
-     
-       console.log(this.crud.selectedCycle);
-       this.router.navigate(['./gestionMatiere']);
-    }
-
-ngOnInit(): void {
-
-}
+  }
 
 }

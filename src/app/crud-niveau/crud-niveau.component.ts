@@ -56,11 +56,11 @@ export class CrudNiveauComponent implements OnInit {
     console.log(this.crud.selectedCycle);
   }
 
-  onClickAfficherBtn(cycleId: string) {
-    this.crud.selectedCycle = cycleId;
+  onClickAfficherBtn(selectedId: string) {
+    this.crud.selectedNiveau = selectedId;
 
 
-    console.log(this.crud.selectedCycle);
+    console.log(this.crud.selectedNiveau);
     this.router.navigate(['./gestionFiliere']);
   }
 
