@@ -45,8 +45,8 @@ export class CrudService {
   urlMatierePost = environment.host + "matiere";
   urlMatiereDelete = environment.host + "matiere/";
   urlMatierePut = environment.host + "matiere/";
-  matiereData = {
-    matiere: "",
+  matiereGetData = {
+    id: [],
   }
   ////////////////////////////////////////////////
 

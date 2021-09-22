@@ -44,11 +44,11 @@ export class CrudFiliereComponentComponent implements OnInit {
     }
   }
 
-  onClickAfficherBtn(cycleId: string) {
-    this.crud.selectedCycle = cycleId;
+  onClickAfficherBtn(filiereId: string) {
+    this.crud.selectedFiliere = filiereId;
 
-
-    console.log(this.crud.selectedCycle);
+    this.crud.matiereGetData.id= this.crud.selectedFiliere;
+    console.log(this.crud.selectedFiliere);
     this.router.navigate(['./gestionMatiere']);
   }
 

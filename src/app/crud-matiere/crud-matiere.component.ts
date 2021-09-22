@@ -14,7 +14,6 @@ export class CrudMatiereComponent implements OnInit {
   responses:any;
   http:any;
   suivantactivated =false;
-  millisecondsToWait = 500;
 
   constructor(http: HttpClient,private router : Router,public crud:CrudService) {
 
@@ -23,35 +22,12 @@ export class CrudMatiereComponent implements OnInit {
 
   }
 
-  onCreatePost(postData: {filiere: string;
 
-      }) {
-// Send Http request
-
-this.http
-.post(
-'http://127.0.0.1:8000/api/filiere',
-postData
-)
-.subscribe((responseData: any) => {
-  console.log(responseData);
-});
-}
 
 onSelectedElementList(){
 
 }
-activatesuivant(){
-this.suivantactivated=true;
-}
-relocate_home()
-{
-location.href = "gestionFiliere";
-}
 
-onLoadLoginPage(){
-this.router.navigate(['./confirmationSMS']);
-}
 
     onCreateNewElement(){
       this.crud.sendRequest(this.crud.urlMatierePost,this.crud.sendData);
@@ -82,7 +58,7 @@ this.router.navigate(['./confirmationSMS']);
     onClickAfficherBtn(cycleId:string){
       this.crud.selectedCycle=cycleId;
 
-     
+
        console.log(this.crud.selectedCycle);
        this.router.navigate(['./pageEditor']);
     }
