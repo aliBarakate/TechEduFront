@@ -22,9 +22,7 @@ export class CrudMatiereComponent implements OnInit {
   }
 
     onCreateNewElement(){
-      this.crud.matiereData.filiere_id.push(this.crud.selectedFiliere) ;
-      this.crud.matiereData.filiere_id.splice(0, 1);
-      this.crud.matiereData.all="0";
+
       this.crud.sendRequest(this.crud.urlMatierePost,this.crud.matiereData);
       this.multipleGetRequest();
     }
@@ -35,7 +33,8 @@ export class CrudMatiereComponent implements OnInit {
     }
 
     onUpdateElement(){
-      this.crud.putRequest(this.crud.urlMatierePut+this.crud.id,this.crud.sendData);
+    console.log(this.crud.matiereData);
+      this.crud.putRequest(this.crud.urlMatierePut+this.crud.id,this.crud.matiereData);
 
       this.multipleGetRequest();
     }
