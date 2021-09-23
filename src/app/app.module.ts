@@ -37,6 +37,7 @@ import { KatexModule } from 'ng-katex';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {ToastModule} from 'primeng/toast';
 import {MessageService} from "primeng/api";
+import { CrudPackComponent } from './crud-pack/crud-pack.component';
 registerLocaleData(fr);
 
 const appRoutes: Routes = [
@@ -74,7 +75,8 @@ const appRoutes: Routes = [
     CrudNiveauComponent,
     CrudMatiereComponent,
     CrudCycleComponent,
-    CorbeilleMatiereComponent
+    CorbeilleMatiereComponent,
+    CrudPackComponent
   ],
   imports: [
     BrowserModule,
