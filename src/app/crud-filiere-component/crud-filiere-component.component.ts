@@ -47,7 +47,7 @@ export class CrudFiliereComponentComponent implements OnInit {
   onClickAfficherBtn(filiereId: string) {
     this.crud.selectedFiliere = filiereId;
 
-    this.crud.matiereGetData.id= this.crud.selectedFiliere;
+
     console.log(this.crud.selectedFiliere);
     this.router.navigate(['./gestionMatiere']);
   }

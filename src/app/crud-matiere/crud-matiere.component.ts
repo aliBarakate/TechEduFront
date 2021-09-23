@@ -13,29 +13,20 @@ import { CrudService } from '../crud.service';
 export class CrudMatiereComponent implements OnInit {
   responses:any;
   http:any;
-  suivantactivated =false;
 
   constructor(http: HttpClient,private router : Router,public crud:CrudService) {
 
 
-    this.crud.getRequest(this.crud.urlMatiereGet);
-
+    this.crud.getRequest(this.crud.urlMatiereGet+this.crud.selectedFiliere);
+    console.log(this.crud.matiereData)
   }
 
-
-
-onSelectedElementList(){
-
-}
-
-
     onCreateNewElement(){
-      this.crud.sendRequest(this.crud.urlMatierePost,this.crud.sendData);
-
-      //setTimeout(function(){ location.href = "gestionFiliere"; }, 300);
+      this.crud.matiereData.filiere_id.push(this.crud.selectedFiliere) ;
+      this.crud.matiereData.filiere_id.splice(0, 1);
+      this.crud.matiereData.all="0";
+      this.crud.sendRequest(this.crud.urlMatierePost,this.crud.matiereData);
       this.multipleGetRequest();
-
-
     }
 
     onDeleteElement(id:any){
@@ -51,14 +42,12 @@ onSelectedElementList(){
 
     multipleGetRequest(){
       for ( let i = 0; i < 5; i++) {
-        this.crud.getRequest(this.crud.urlMatiereGet);
+        this.crud.getRequest(this.crud.urlMatiereGet+this.crud.selectedFiliere);
       }
     }
 
     onClickAfficherBtn(cycleId:string){
-      this.crud.selectedCycle=cycleId;
-
-
+       this.crud.selectedCycle=cycleId;
        console.log(this.crud.selectedCycle);
        this.router.navigate(['./pageEditor']);
     }

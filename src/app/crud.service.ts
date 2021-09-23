@@ -41,12 +41,14 @@ export class CrudService {
   ////////////////////////////////////////////////////////////
 
   //Crud-matiere
-  urlMatiereGet = environment.host + "matieres";
+  urlMatiereGet = environment.host + "matieresFiliere/";
   urlMatierePost = environment.host + "matiere";
   urlMatiereDelete = environment.host + "matiere/";
   urlMatierePut = environment.host + "matiere/";
-  matiereGetData = {
-    id: [],
+  matiereData = {
+    name:"",
+    filiere_id:[1],
+    all:"",
   }
   ////////////////////////////////////////////////
 
@@ -83,6 +85,15 @@ export class CrudService {
 
   getRequest(urlGet: string) {
     this.http.get(urlGet)
+      .subscribe(responses => {
+        console.log(responses);
+        this.responses = responses;
+        console.log(responses);
+      });
+  }
+
+  getRequestMatiere(urlGet: string, object: any) {
+    this.http.get(urlGet, object)
       .subscribe(responses => {
         console.log(responses);
         this.responses = responses;
