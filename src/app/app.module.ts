@@ -52,6 +52,7 @@ const appRoutes: Routes = [
   { path: 'gestionMatiere',component: CrudMatiereComponent},
   { path: 'gestionCycles',component: CrudCycleComponent},
   { path: 'corbeilleMatiere',component: CorbeilleMatiereComponent},
+  { path: 'gestionPack',component: CrudPackComponent},
 
 
 
