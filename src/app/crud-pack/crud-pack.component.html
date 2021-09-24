@@ -24,18 +24,20 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <input nz-input placeholder="Nom du pack" [(ngModel)]="crud.matiereData.name" />
-                <br>
+                <input nz-input placeholder="Nom du pack" [(ngModel)]="crud.packData.name" />
+
                 <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown button
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Matiere
                   </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" >Math</a></li>
+                    <li><a class="dropdown-item">Physique</a></li>
+                    <li><a class="dropdown-item">SVT</a></li>
+                  </ul>
                 </div>
+                <br>
+                <br><br><br>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
@@ -53,7 +55,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <input nz-input placeholder="Nom de la filiere" [(ngModel)]="crud.matiereData.name" />
+                <input nz-input placeholder="Nom de la filiere" [(ngModel)]="crud.packData.name" />
                 <button class="btn btn-primary" (click)="onUpdateElement()" >envoyer</button>
               </div>
               <div class="modal-footer">
@@ -67,11 +69,11 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let response of crud.responses" >
-      <td>{{response.id}}</td>
+    <tr *ngFor="let response of listePack" >
+
       <td>{{response.name}}</td>
-      <td>{{response.created_at}}</td>
-      <td>{{response.updated_at}}</td>
+      <td>{{response.date_creation}}</td>
+      <td>{{response.date_modification}}</td>
       <td>
         <button type="button" class="btn btn-info" style="margin-right: 2%;" (click)="onClickAfficherBtn(response.id)">Afficher</button>
         <button class="btn btn-warning " style="margin-right: 2%;"data-bs-toggle="modal" data-bs-target="#modifierModal" (click)="crud.id=response.id">Modifier</button><button class="btn btn-danger"  (click)="onDeleteElement(response.id)" >Supprimer</button></td>

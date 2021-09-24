@@ -11,18 +11,19 @@ import {CrudService} from "../crud.service";
 export class CrudPackComponent implements OnInit {
   responses:any;
   http:any;
+  listePack:any[];
 
   constructor(http: HttpClient,private router : Router,public crud:CrudService) {
-
+  this.listePack=[];
 
     this.crud.getRequest(this.crud.urlMatiereGet+this.crud.selectedFiliere);
     console.log(this.crud.matiereData)
   }
 
   onCreateNewElement(){
-
-    this.crud.sendRequest(this.crud.urlMatierePost,this.crud.matiereData);
-    this.multipleGetRequest();
+    //this.listePack.push(this.crud.packData)
+    //this.crud.sendRequest(this.crud.urlMatierePost,this.crud.matiereData);
+    //this.multipleGetRequest();
   }
 
   onDeleteElement(id:any){

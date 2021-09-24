@@ -70,6 +70,19 @@ export class CrudService {
   urlCorbeilleMatierePut = environment.host + "matiere/";
 
   ////////////////////////////////////////////////
+
+  //Crud-pack
+  urlPackGet = environment.host + "pack";
+  urlPackPost = environment.host + "cycle";
+  urlPackDelete = environment.host + "cycle/";
+  urlPackPut = environment.host + "cycle/";
+
+  packData = {
+    name:"",
+    date_creation:"2021-09-21 18:28:24",
+    date_modification:"2021-09-21 18:28:24",
+  }
+  ////////////////////////////////////////////////
   id: any;
 
   constructor(private http: HttpClient,private messageService: MessageService) {
