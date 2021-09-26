@@ -21,9 +21,9 @@ export class CrudPackComponent implements OnInit {
   }
 
   onCreateNewElement(){
-    //this.listePack.push(this.crud.packData)
-    //this.crud.sendRequest(this.crud.urlMatierePost,this.crud.matiereData);
-    //this.multipleGetRequest();
+    this.listePack.push(this.crud.packData)
+    this.crud.sendRequest(this.crud.urlMatierePost,this.crud.matiereData);
+    this.multipleGetRequest();
     console.log(this.listePack);
   }
 
