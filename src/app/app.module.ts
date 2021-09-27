@@ -38,6 +38,7 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
 import {ToastModule} from 'primeng/toast';
 import {MessageService} from "primeng/api";
 import { CrudPackComponent } from './crud-pack/crud-pack.component';
+import { CrudCoursComponent } from './crud-cours/crud-cours.component';
 registerLocaleData(fr);
 
 const appRoutes: Routes = [
@@ -77,7 +78,8 @@ const appRoutes: Routes = [
     CrudMatiereComponent,
     CrudCycleComponent,
     CorbeilleMatiereComponent,
-    CrudPackComponent
+    CrudPackComponent,
+    CrudCoursComponent
   ],
   imports: [
     BrowserModule,
