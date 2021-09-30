@@ -35,7 +35,6 @@ export class CrudMatiereComponent implements OnInit {
     onUpdateElement(){
     console.log(this.crud.matiereData);
       this.crud.putRequest(this.crud.urlMatierePut+this.crud.id,this.crud.matiereData);
-
       this.multipleGetRequest();
     }
 
