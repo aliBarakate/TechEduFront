@@ -44,9 +44,9 @@ export class CrudMatiereComponent implements OnInit {
       }
     }
 
-    onClickAfficherBtn(cycleId:string){
-       this.crud.selectedCycle=cycleId;
-       console.log(this.crud.selectedCycle);
+    onClickAfficherBtn(matiereId:string){
+       this.crud.seletedMatiere=matiereId;
+       console.log("id de la matiere seletionne est :"+this.crud.seletedMatiere);
        this.router.navigate(['./gestionCours']);
     }
 

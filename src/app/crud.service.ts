@@ -83,6 +83,18 @@ export class CrudService {
     date_modification:"2021-09-21 18:28:24",
   }
   ////////////////////////////////////////////////
+
+  //Crud-Cours
+  urlCoursGetForMatiere = environment.host + "coursMatiere/";
+  urlCoursPost = environment.host + "niveau";
+  urlCoursDelete = environment.host + "niveaux/";
+  urlCoursPut = environment.host + "niveaux/";
+  coursData = {
+    name: "",
+    cycle_id: "",
+  }
+  ////////////////////////////////////////////////////////////
+
   id: any;
 
   constructor(private http: HttpClient,private messageService: MessageService) {

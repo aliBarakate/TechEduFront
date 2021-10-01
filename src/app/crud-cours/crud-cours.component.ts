@@ -15,7 +15,7 @@ export class CrudCoursComponent implements OnInit {
   constructor(http: HttpClient,private router : Router,public crud:CrudService) {
 
 
-    this.crud.getRequest(this.crud.urlMatiereGet+this.crud.selectedFiliere);
+    this.crud.getRequest(this.crud.urlCoursGetForMatiere+this.crud.seletedMatiere+"/"+this.crud.selectedFiliere);
     console.log(this.crud.matiereData)
   }
 
@@ -39,7 +39,7 @@ export class CrudCoursComponent implements OnInit {
 
   multipleGetRequest(){
     for ( let i = 0; i < 5; i++) {
-      this.crud.getRequest(this.crud.urlMatiereGet+this.crud.selectedFiliere);
+      this.crud.getRequest(this.crud.urlCoursGetForMatiere+this.crud.seletedMatiere+"/"+this.crud.selectedFiliere);
     }
   }
 
