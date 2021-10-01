@@ -47,7 +47,7 @@ export class CrudMatiereComponent implements OnInit {
     onClickAfficherBtn(cycleId:string){
        this.crud.selectedCycle=cycleId;
        console.log(this.crud.selectedCycle);
-       this.router.navigate(['./pageEditor']);
+       this.router.navigate(['./gestionCours']);
     }
 
 ngOnInit(): void {

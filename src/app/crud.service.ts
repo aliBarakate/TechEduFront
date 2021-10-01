@@ -12,6 +12,7 @@ export class CrudService {
   selectedCycle: any;
   selectedNiveau: any;
   selectedFiliere: any;
+  seletedMatiere: any;
   responses: any;
   messageReturned: string="ceci est le detail du toast";
   sendData = {
