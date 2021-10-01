@@ -95,7 +95,7 @@ export class CrudService {
   urlCoursGetForMatiere = environment.host + "coursMatiere/";
   urlCoursPost = environment.host + "cours";
   urlCoursDelete = environment.host + "niveaux/";
-  urlCoursPut = environment.host + "niveaux/";
+  urlCoursPut = environment.host + "cours/";
   coursData:CoursData;
 
 

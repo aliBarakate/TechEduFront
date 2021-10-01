@@ -20,8 +20,7 @@ export class CrudCoursComponent implements OnInit {
   }
 
   onCreateNewElement(){
-    this.crud.coursData.matiere_id=this.crud.seletedMatiere;
-    this.crud.coursData.filiere_id.push(this.crud.selectedFiliere);
+    this.settingJsonObjectParameters();
     this.crud.sendRequest(this.crud.urlCoursPost,this.crud.coursData);
     this.multipleGetRequest();
     this.settingJsonObjectNull();
@@ -33,10 +32,12 @@ export class CrudCoursComponent implements OnInit {
   }
 
   onUpdateElement(){
-    console.log(this.crud.matiereData);
-    this.crud.putRequest(this.crud.urlMatierePut+this.crud.id,this.crud.matiereData);
+    this.settingJsonObjectParameters()
+    //console.log(this.crud.matiereData);
+    this.crud.putRequest(this.crud.urlCoursPut+this.crud.id,this.crud.coursData);
 
     this.multipleGetRequest();
+    this.settingJsonObjectNull();
   }
 
   multipleGetRequest(){
@@ -55,6 +56,11 @@ export class CrudCoursComponent implements OnInit {
     this.crud.coursData.name="";
     this.crud.coursData.matiere_id="";
     this.crud.coursData.filiere_id=[];
+  }
+
+  settingJsonObjectParameters(){
+    this.crud.coursData.matiere_id=this.crud.seletedMatiere;
+    this.crud.coursData.filiere_id.push(this.crud.selectedFiliere);
   }
 
   ngOnInit(): void {
