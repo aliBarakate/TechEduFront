@@ -3,6 +3,13 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from 'src/environments/environment';
 import {MessageService} from "primeng/api";
 
+interface CoursData {
+  name: string,
+  matiere_id: string,
+  filiere_id:number[],
+}
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -86,18 +93,29 @@ export class CrudService {
 
   //Crud-Cours
   urlCoursGetForMatiere = environment.host + "coursMatiere/";
-  urlCoursPost = environment.host + "niveau";
+  urlCoursPost = environment.host + "cours";
   urlCoursDelete = environment.host + "niveaux/";
   urlCoursPut = environment.host + "niveaux/";
-  coursData = {
-    name: "",
-    cycle_id: "",
-  }
+  coursData:CoursData;
+
+
+
   ////////////////////////////////////////////////////////////
 
   id: any;
 
+
+
   constructor(private http: HttpClient,private messageService: MessageService) {
+    //initialisation de coursData/////////////////////////////////////////////
+    this.coursData={
+      name: "",
+        matiere_id: "",
+        filiere_id:[]
+    };
+
+
+
 
   }
   showInfoDelete() {
