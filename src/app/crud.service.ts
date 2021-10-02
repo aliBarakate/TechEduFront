@@ -9,6 +9,14 @@ interface CoursData {
   filiere_id:number[],
 }
 
+interface ChapitreData {
+  name: string,
+  Video: string,
+  numeroChapitre : number,
+  cours_id : number,
+  filiere_id:number[],
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +28,8 @@ export class CrudService {
   selectedNiveau: any;
   selectedFiliere: any;
   seletedMatiere: any;
+  selectedCours: any;
+  //////////////////////////////////////////
   responses: any;
   messageReturned: string="ceci est le detail du toast";
   sendData = {
@@ -97,9 +107,14 @@ export class CrudService {
   urlCoursDelete = environment.host + "cours/";
   urlCoursPut = environment.host + "cours/";
   coursData:CoursData;
+  ////////////////////////////////////////////////////////////
 
-
-
+  //Crud-Chapitres
+  urlChapitresGetForOneCoursOneFiliere = environment.host +"chapitresCours/";
+  urlChapitresPost = environment.host + "chapitre";
+  urlChapitresDelete = environment.host + "cours/";
+  urlChapitresPut = environment.host + "cours/";
+  chapitreData:ChapitreData;
   ////////////////////////////////////////////////////////////
 
   id: any;
@@ -113,6 +128,14 @@ export class CrudService {
         matiere_id: "",
         filiere_id:[]
     };
+
+    this.chapitreData={
+      name:"",
+      Video: "",
+      numeroChapitre : 0,
+      cours_id : 0,
+      filiere_id:[],
+    }
 
 
 

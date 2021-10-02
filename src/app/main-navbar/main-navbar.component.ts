@@ -48,4 +48,7 @@ export class MainNavbarComponent implements OnInit {
   onLoadGestionCours(){
     this.router.navigate(['./gestionCours']);
   }
+  onLoadGestionChapitres(){
+    this.router.navigate(['./gestionChapitres']);
+  }
 }

@@ -2,6 +2,16 @@
 <app-main-navbar></app-main-navbar>
 <h1 style="text-align: center;margin-top: 5%;">Editeur</h1>
 
+  <h3>Titre du chapitre :</h3>
+  <input type="text" pInputText [(ngModel)]="crud.chapitreData.name" />
+
+  <h3>Url de la video :</h3>
+  <input type="text" pInputText [(ngModel)]="crud.chapitreData.Video" />
+
+  <h3>Numero du chapitre :</h3>
+  <input type="text" pInputText [(ngModel)]="crud.chapitreData.numeroChapitre" />
+
+
 <p-editor [(ngModel)]="text2" [style]="{'height':'320px'}">
     <ng-template pTemplate="header">
         <span class="ql-formats">
@@ -35,4 +45,5 @@
 <!-- <ng-katex-html [html]="text2"></ng-katex-html> -->
 <textarea pInputTextarea [(ngModel)]="text2"></textarea>
 <ng-katex-paragraph [paragraph]="text2"></ng-katex-paragraph>
+  <button class="btn btn-primary" (click)="onCreateNewElement()">Enregistrer</button>
 </div>

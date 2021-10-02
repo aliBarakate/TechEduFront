@@ -4,26 +4,23 @@ import {Router} from "@angular/router";
 import {CrudService} from "../crud.service";
 
 @Component({
-  selector: 'app-crud-cours',
-  templateUrl: './crud-cours.component.html',
-  styleUrls: ['./crud-cours.component.css']
+  selector: 'app-crud-chapitres',
+  templateUrl: './crud-chapitres.component.html',
+  styleUrls: ['./crud-chapitres.component.css']
 })
-export class CrudCoursComponent implements OnInit {
+export class CrudChapitresComponent implements OnInit {
   responses:any;
   http:any;
 
   constructor(http: HttpClient,private router : Router,public crud:CrudService) {
 
 
-    this.crud.getRequest(this.crud.urlCoursGetForMatiere+this.crud.seletedMatiere+"/"+this.crud.selectedFiliere);
+    this.crud.getRequest(this.crud.urlChapitresGetForOneCoursOneFiliere+this.crud.selectedCours+"/"+this.crud.selectedFiliere);
     console.log(this.crud.matiereData)
   }
 
   onCreateNewElement(){
-    this.settingJsonObjectParameters();
-    this.crud.sendRequest(this.crud.urlCoursPost,this.crud.coursData);
-    this.multipleGetRequest();
-    this.settingJsonObjectNull();
+    this.router.navigate(['./pageEditor']);
   }
 
   onDeleteElement(id:any){
@@ -42,26 +39,29 @@ export class CrudCoursComponent implements OnInit {
 
   multipleGetRequest(){
     for ( let i = 0; i < 5; i++) {
-      this.crud.getRequest(this.crud.urlCoursGetForMatiere+this.crud.seletedMatiere+"/"+this.crud.selectedFiliere);
+      this.crud.getRequest(this.crud.urlChapitresGetForOneCoursOneFiliere+this.crud.selectedCours+"/"+this.crud.selectedFiliere);
     }
   }
 
   onClickAfficherBtn(coursId:string){
     this.crud.selectedCours=coursId;
     console.log(this.crud.selectedCycle);
-    this.router.navigate(['./gestionChapitres']);
+    this.router.navigate(['./pageEditor']);
   }
 
   settingJsonObjectNull(){
     this.crud.coursData.name="";
-    this.crud.coursData.matiere_id="";
-    this.crud.coursData.filiere_id=[];
+    this.crud.chapitreData.Video="";
+    this.crud.chapitreData.numeroChapitre=0;
+    this.crud.chapitreData.cours_id=0;
+    this.crud.chapitreData.filiere_id=[];
   }
 
   settingJsonObjectParameters(){
     this.crud.coursData.matiere_id=this.crud.seletedMatiere;
     this.crud.coursData.filiere_id.push(this.crud.selectedFiliere);
   }
+
 
   ngOnInit(): void {
 

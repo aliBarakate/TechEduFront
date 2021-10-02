@@ -40,6 +40,7 @@ import {MessageService} from "primeng/api";
 import { CrudPackComponent } from './crud-pack/crud-pack.component';
 import { CrudCoursComponent } from './crud-cours/crud-cours.component';
 import { CrudChapitresComponent } from './crud-chapitres/crud-chapitres.component';
+
 registerLocaleData(fr);
 
 const appRoutes: Routes = [
@@ -55,6 +56,7 @@ const appRoutes: Routes = [
   { path: 'gestionCycles',component: CrudCycleComponent},
   { path: 'corbeilleMatiere',component: CorbeilleMatiereComponent},
   { path: 'gestionPack',component: CrudPackComponent},
+  { path: 'gestionChapitres',component: CrudChapitresComponent},
   { path: 'gestionCours',component: CrudCoursComponent},
 
 
@@ -100,6 +102,7 @@ const appRoutes: Routes = [
     KatexModule,
     InputTextareaModule,
     ToastModule,
+    InputTextModule
   ],
   providers: [{ provide: NZ_I18N, useValue: fr_FR },MessageService],
   bootstrap: [AppComponent]
