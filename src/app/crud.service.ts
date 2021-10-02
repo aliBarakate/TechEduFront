@@ -112,7 +112,7 @@ export class CrudService {
   //Crud-Chapitres
   urlChapitresGetForOneCoursOneFiliere = environment.host +"chapitresCours/";
   urlChapitresPost = environment.host + "chapitre";
-  urlChapitresDelete = environment.host + "cours/";
+  urlChapitresDelete = environment.host + "chapitre/";
   urlChapitresPut = environment.host + "cours/";
   chapitreData:ChapitreData;
   ////////////////////////////////////////////////////////////

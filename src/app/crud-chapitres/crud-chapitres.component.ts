@@ -24,7 +24,7 @@ export class CrudChapitresComponent implements OnInit {
   }
 
   onDeleteElement(id:any){
-    this.crud.deleteRequest(this.crud.urlCoursDelete+id);
+    this.crud.deleteRequest(this.crud.urlChapitresDelete+id);
     this.multipleGetRequest();
   }
 
