@@ -12,7 +12,7 @@
   <input type="text" pInputText [(ngModel)]="crud.chapitreData.numeroChapitre" />
 
 
-<p-editor [(ngModel)]="text2" [style]="{'height':'320px'}">
+<p-editor [(ngModel)]="html" [style]="{'height':'320px'}">
     <ng-template pTemplate="header">
         <span class="ql-formats">
           <select class="ql-header">
@@ -40,10 +40,7 @@
     </ng-template>
 </p-editor>
 <p>Value: {{text2||'empty'}}</p>
-<!-- <ng-katex-html [html]="text2"></ng-katex-html> -->
-<!-- <ng-katex-paragraph [paragraph]="text2"></ng-katex-paragraph> -->
-<!-- <ng-katex-html [html]="text2"></ng-katex-html> -->
 <textarea pInputTextarea [(ngModel)]="text2"></textarea>
-<ng-katex-paragraph [paragraph]="text2"></ng-katex-paragraph>
+  <ng-katex-html [html]="html"></ng-katex-html>
   <button class="btn btn-primary" (click)="onCreateNewElement()">Enregistrer</button>
 </div>

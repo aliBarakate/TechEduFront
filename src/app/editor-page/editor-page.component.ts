@@ -13,6 +13,7 @@ import {CrudService} from "../crud.service";
 export class EditorPageComponent implements OnInit {
   text: any;
   text2:string=' ';
+  html:string=" ";
   paragraph: string = `
   You can write text, that contains expressions like this: $x ^ 2 + 5$ inside them. As you probably know.
   You also can write expressions in display mode as follows: $$\\sum_{i=1}^n(x_i^2 - \\overline{x}^2)$$.
@@ -35,7 +36,7 @@ export class EditorPageComponent implements OnInit {
   }
 
   settingJsonObjectNull(){
-    this.crud.coursData.name="";
+    this.crud.chapitreData.name="";
     this.crud.chapitreData.Video="";
     this.crud.chapitreData.numeroChapitre=0;
     this.crud.chapitreData.cours_id=0;
