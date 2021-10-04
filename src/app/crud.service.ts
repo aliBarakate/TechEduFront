@@ -19,6 +19,11 @@ interface ChapitreData {
   filiere_id:number[],
 }
 
+interface PackData{
+  name:string,
+  cours_id:number[],
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -92,15 +97,13 @@ export class CrudService {
 
   //Crud-pack
   urlPackGet = environment.host + "pack";
-  urlPackPost = environment.host + "cycle";
-  urlPackDelete = environment.host + "cycle/";
-  urlPackPut = environment.host + "cycle/";
+  urlPackPost = environment.host + "pack";
+  urlPackDelete = environment.host + "pack/";
+  urlPackPut = environment.host + "pack/";
 
-  packData = {
-    name:"",
-    date_creation:"2021-09-21 18:28:24",
-    date_modification:"2021-09-21 18:28:24",
-  }
+  packData:PackData;
+
+
   ////////////////////////////////////////////////
 
   //Crud-Cours
@@ -139,6 +142,11 @@ export class CrudService {
       numeroChapitre : 0,
       cours_id : 0,
       filiere_id:[],
+    }
+
+    this.packData={
+      name:"",
+      cours_id:[],
     }
 
     this.modification=false;

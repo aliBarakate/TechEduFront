@@ -40,6 +40,7 @@ import {MessageService} from "primeng/api";
 import { CrudPackComponent } from './crud-pack/crud-pack.component';
 import { CrudCoursComponent } from './crud-cours/crud-cours.component';
 import { CrudChapitresComponent } from './crud-chapitres/crud-chapitres.component';
+import { FormPackComponent } from './form-pack/form-pack.component';
 
 registerLocaleData(fr);
 
@@ -84,7 +85,8 @@ const appRoutes: Routes = [
     CorbeilleMatiereComponent,
     CrudPackComponent,
     CrudCoursComponent,
-    CrudChapitresComponent
+    CrudChapitresComponent,
+    FormPackComponent
   ],
   imports: [
     BrowserModule,
