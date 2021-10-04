@@ -23,9 +23,15 @@ export class EditorPageComponent implements OnInit {
 
   onCreateNewElement(){
     this.settingJsonObjectParameters();
-    this.crud.sendRequest(this.crud.urlChapitresPost,this.crud.chapitreData);
+    if (this.crud.modification==true){
+      this.crud.putRequest(this.crud.urlChapitresPut+this.crud.id,this.crud.chapitreData);
+    }else {
+      this.crud.sendRequest(this.crud.urlChapitresPost,this.crud.chapitreData);
+    }
+
     this.multipleGetRequest();
     this.settingJsonObjectNull();
+    this.crud.modification=false;
     this.router.navigate(['./gestionChapitres']);
   }
 
@@ -47,6 +53,16 @@ export class EditorPageComponent implements OnInit {
     this.crud.chapitreData.cours_id=this.crud.selectedCours;
     this.crud.chapitreData.filiere_id.push(this.crud.selectedFiliere);
     this.crud.chapitreData.filiere_id.push(this.crud.selectedFiliere);
+  }
+
+  onUpdateElement(){
+    this.settingJsonObjectParameters()
+    //console.log(this.crud.matiereData);
+    this.crud.putRequest(this.crud.urlChapitresPut+this.crud.id,this.crud.chapitreData);
+
+    this.multipleGetRequest();
+    this.settingJsonObjectNull();
+    this.router.navigate(['./gestionChapitres']);
   }
 
   constructor(http: HttpClient,private router : Router,public crud:CrudService) { }

@@ -7,10 +7,12 @@ interface CoursData {
   name: string,
   matiere_id: string,
   filiere_id:number[],
+
 }
 
 interface ChapitreData {
   name: string,
+  Text:string,
   Video: string,
   numeroChapitre : number,
   cours_id : number,
@@ -113,11 +115,12 @@ export class CrudService {
   urlChapitresGetForOneCoursOneFiliere = environment.host +"chapitresCours/";
   urlChapitresPost = environment.host + "chapitre";
   urlChapitresDelete = environment.host + "chapitre/";
-  urlChapitresPut = environment.host + "cours/";
+  urlChapitresPut = environment.host + "chapitre/";
   chapitreData:ChapitreData;
   ////////////////////////////////////////////////////////////
 
   id: any;
+  modification:boolean;
 
 
 
@@ -131,13 +134,14 @@ export class CrudService {
 
     this.chapitreData={
       name:"",
+      Text:" ",
       Video: "",
       numeroChapitre : 0,
       cours_id : 0,
       filiere_id:[],
     }
 
-
+    this.modification=false;
 
 
   }

@@ -28,13 +28,19 @@ export class CrudChapitresComponent implements OnInit {
     this.multipleGetRequest();
   }
 
-  onUpdateElement() {
+  onUpdateElement(id:any,response:any) {
+    this.crud.modification=true;
+    this.crud.id=id;
+    this.crud.chapitreData.name=response.name;
+    this.crud.chapitreData.Text=response.text;
+    this.crud.chapitreData.Video=response.Video;
+    this.crud.chapitreData.numeroChapitre=response.numeroChapitre;
     this.settingJsonObjectParameters()
     //console.log(this.crud.matiereData);
-    this.crud.putRequest(this.crud.urlCoursPut + this.crud.id, this.crud.coursData);
+    this.router.navigate(['./pageEditor']);
 
-    this.multipleGetRequest();
-    this.settingJsonObjectNull();
+    //this.multipleGetRequest();
+    //this.settingJsonObjectNull();
   }
 
   multipleGetRequest() {
@@ -44,6 +50,7 @@ export class CrudChapitresComponent implements OnInit {
   }
 
   onClickAfficherBtn(coursId: string) {
+
     this.crud.selectedCours = coursId;
     console.log(this.crud.selectedCycle);
     this.router.navigate(['./pageEditor']);

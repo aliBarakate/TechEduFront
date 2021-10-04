@@ -27,7 +27,7 @@
       <td>{{response.updated_at}}</td>
       <td>
         <button type="button" class="btn btn-info" style="margin-right: 2%;" (click)="onClickAfficherBtn(response.id)">Afficher</button>
-        <button class="btn btn-warning " style="margin-right: 2%;"data-bs-toggle="modal" data-bs-target="#modifierModal" (click)="crud.id=response.id">Modifier</button><button class="btn btn-danger"  (click)="onDeleteElement(response.id)" >Supprimer</button></td>
+        <button class="btn btn-warning " (click)="onUpdateElement(response.id,response)">Modifier</button><button class="btn btn-danger"  (click)="onDeleteElement(response.id)" >Supprimer</button></td>
     </tr>
     </tbody>
   </nz-table>
