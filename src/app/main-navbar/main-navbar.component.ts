@@ -51,4 +51,7 @@ export class MainNavbarComponent implements OnInit {
   onLoadGestionChapitres(){
     this.router.navigate(['./gestionChapitres']);
   }
+  onLoadFormPack(){
+    this.router.navigate(['./formPack']);
+  }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-form-pack',
   templateUrl: './form-pack.component.html',
@@ -7,7 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormPackComponent implements OnInit {
 
-  constructor() { }
+  listeCycle: any;
+  listeNiveau: any;
+  listeFiliere: any;
+  listeMatiere: any;
+
+  selectedCycle:string="";
+  selectedNiveau:string="";
+  selectedFiliere:string="";
+  selectedMatiere:string="";
+
+
+
+
+  constructor() {
+    
+  }
 
   ngOnInit(): void {
   }

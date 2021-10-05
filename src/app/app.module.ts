@@ -42,6 +42,7 @@ import { CrudCoursComponent } from './crud-cours/crud-cours.component';
 import { CrudChapitresComponent } from './crud-chapitres/crud-chapitres.component';
 import { FormPackComponent } from './form-pack/form-pack.component';
 
+
 registerLocaleData(fr);
 
 const appRoutes: Routes = [
@@ -59,7 +60,7 @@ const appRoutes: Routes = [
   { path: 'gestionPack',component: CrudPackComponent},
   { path: 'gestionChapitres',component: CrudChapitresComponent},
   { path: 'gestionCours',component: CrudCoursComponent},
-
+  { path: 'formPack',component: FormPackComponent},
 
 
 ];
