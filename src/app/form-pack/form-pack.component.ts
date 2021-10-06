@@ -19,11 +19,16 @@ export class FormPackComponent implements OnInit {
   selectedFiliere:string="";
   selectedMatiere:string="";
 
+  selectedCycleupdate:string="";
+  selectedNiveauupdate:string="";
+  selectedFiliereupdate:string="";
+  selectedMatiereupdate:string="";
+
 
 
 
   constructor() {
-    
+
   }
 
   ngOnInit(): void {
