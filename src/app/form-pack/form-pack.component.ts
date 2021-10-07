@@ -20,7 +20,6 @@ export class FormPackComponent implements OnInit {
   selectedMatiere:string="";
 
   selectedCycleupdate:string="";
-  selectedNiveauupdate:string="";
 
 
 
