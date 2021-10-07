@@ -21,8 +21,7 @@ export class FormPackComponent implements OnInit {
 
   selectedCycleupdate:string="";
   selectedNiveauupdate:string="";
-  selectedFiliereupdate:string="";
-  selectedMatiereupdate:string="";
+
 
 
 
