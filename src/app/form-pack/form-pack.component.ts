@@ -21,7 +21,7 @@ export class FormPackComponent implements OnInit {
 
   selectedCyclef:string="";
   selectedNiveauf:string="";
-  selectedFilieref:string="";
+
 
 
 
