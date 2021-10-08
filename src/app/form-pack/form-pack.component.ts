@@ -19,7 +19,7 @@ export class FormPackComponent implements OnInit {
   selectedFiliere:string="";
   selectedMatiere:string="";
 
-  selectedMatiereupdate:string="";
+
 
 
 
