@@ -170,6 +170,15 @@ export class CrudService {
       });
   }
 
+  getRequestParticuliere(urlGet: string) {
+    this.http.get(urlGet)
+      .subscribe(responses => {
+        console.log(responses);
+        this.responses = responses;
+        console.log(responses);
+      });
+  }
+
   getRequestMatiere(urlGet: string, object: any) {
     this.http.get(urlGet, object)
       .subscribe(responses => {

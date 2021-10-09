@@ -41,6 +41,7 @@ import { CrudPackComponent } from './crud-pack/crud-pack.component';
 import { CrudCoursComponent } from './crud-cours/crud-cours.component';
 import { CrudChapitresComponent } from './crud-chapitres/crud-chapitres.component';
 import { FormPackComponent } from './form-pack/form-pack.component';
+import {MultiSelectModule} from 'primeng/multiselect';
 
 
 registerLocaleData(fr);
@@ -105,7 +106,8 @@ const appRoutes: Routes = [
     KatexModule,
     InputTextareaModule,
     ToastModule,
-    InputTextModule
+    InputTextModule,
+    MultiSelectModule
   ],
   providers: [{ provide: NZ_I18N, useValue: fr_FR },MessageService],
   bootstrap: [AppComponent]
