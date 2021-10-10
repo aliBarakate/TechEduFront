@@ -17,33 +17,35 @@ export class FormPackComponent implements OnInit {
   listeNiveau: any=[];
   listeFiliere: any=[];
   listeMatiere: any=[];
+  listeCours: any=[];
 
-  selectedCycle:string[]=[""];
-  selectedNiveau:string[]=[""];
-  selectedFiliere:string[]=[""];
-  selectedMatiere:string[]=[""];
-
-
-
-
-
-
+  onCreateNewElement() {
+    for(let i =0;i<this.crud.selectedCoursList.length;i++){
+      this.crud.packData.cours_id.push(this.crud.selectedCoursList[i].id);
+    }
+    this.crud.sendRequest(this.crud.urlPackPost, this.crud.packData);
+    //setTimeout(function(){ location.href = "gestionFiliere"; }, 300);
+    this.multipleGetRequest();
 
 
-  cities: City[];
+  }
+  multipleGetRequest() {
+    for (let i = 0; i < 5; i++) {
+      this.crud.sendRequest(this.crud.urlCyclePost, this.crud.sendData);
+    }
+  }
 
-  selectedCities: City[]=[];
+
 
   constructor(public crud: CrudService) {
-    this.cities = [
-      {name: 'New York', code: 'NY'},
-      {name: 'Rome', code: 'RM'},
-      {name: 'London', code: 'LDN'},
-      {name: 'Istanbul', code: 'IST'},
-      {name: 'Paris', code: 'PRS'}
-    ];
 
-    this.crud.getRequest(this.crud.urlCycleGet);
+
+  this.crud.getRequestParticuliere(this.crud.urlCoursGet,'cours');
+    //this.crud.getRequestParticuliere(this.crud.urlNiveauxGetForCycle,'matiere');
+
+    //this.crud.getRequest(this.crud.urlCoursGet);
+
+
 
   }
 

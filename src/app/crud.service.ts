@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from 'src/environments/environment';
 import {MessageService} from "primeng/api";
+import {readPackageJson} from "@angular/cli/utilities/package-tree";
 
 interface CoursData {
   name: string,
@@ -38,6 +39,18 @@ export class CrudService {
   selectedCours: any;
   //////////////////////////////////////////
   responses: any;
+  responsesCycle: any;
+  responsesNiveau: any;
+  responsesFiliere: any;
+  responsesMatiere: any;
+  responsesCours: any;
+  ////////////////////////////////////////
+  selectedCycleList:any[]=[];
+  selectedNiveauList:any[]=[];
+  selectedFiliereList:any[]=[];
+  selectedMatiereList:any[]=[];
+  selectedCoursList:any[]=[];
+
   messageReturned: string="ceci est le detail du toast";
   sendData = {
     name: "",
@@ -111,6 +124,7 @@ export class CrudService {
   urlCoursPost = environment.host + "cours";
   urlCoursDelete = environment.host + "cours/";
   urlCoursPut = environment.host + "cours/";
+  urlCoursGet = environment.host + "cours/";
   coursData:CoursData;
   ////////////////////////////////////////////////////////////
 
@@ -170,13 +184,36 @@ export class CrudService {
       });
   }
 
-  getRequestParticuliere(urlGet: string) {
+  getRequestParticuliere(urlGet: string,responseList: any) {
+    //this.responsesCycle="outside";
+    //console.log(responseList);
     this.http.get(urlGet)
       .subscribe(responses => {
-        console.log(responses);
+        //console.log(responses);
         this.responses = responses;
-        console.log(responses);
-      });
+          switch(responseList) {
+            case 'cycle':
+              this.responsesCycle=responses;
+              break;
+            case 'niveau':
+              this.responsesNiveau=responses;
+              break;
+            case 'filiere':
+              this.responsesFiliere=responses;
+              break;
+            case 'matiere':
+              this.responsesMatiere=responses;
+              break;
+            case 'cours':
+              this.responsesCours=responses;
+              break;
+
+          }
+
+      }
+      );
+    //this.responsesCycle="hello";
+
   }
 
   getRequestMatiere(urlGet: string, object: any) {

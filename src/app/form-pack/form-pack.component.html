@@ -3,31 +3,31 @@
 
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Nom du pack</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" >
-    <label for="dropdownCycle" class="form-label">Cycles :</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" [(ngModel)]="crud.packData.name">
+    <!--    <label for="dropdownCycle" class="form-label">Cycles :</label>
 
-    <p-multiSelect class="m-4" [options]="listeCycle" [(ngModel)]="selectedCities" optionLabel="name" placeholder="Veuiller selectionner un Cycle" display="chip"></p-multiSelect>
+        <p-multiSelect class="m-4" [options]="crud.responsesCycle" [(ngModel)]="crud.selectedCycleList" optionLabel="name" placeholder="Veuiller selectionner un Cycle" display="chip"></p-multiSelect>
 
-    <br>
-    <label for="dropdownCycle" class="form-label">Niveaux :</label>
+        <br>
+        <label for="dropdownCycle" class="form-label">Niveaux :</label>
 
-    <p-multiSelect class="m-4" [options]="listeNiveau" [(ngModel)]="selectedCities" optionLabel="name" placeholder="Veuiller selectionner un Niveau" [disabled]="true"></p-multiSelect>
+        <p-multiSelect class="m-4" [options]="listeNiveau" [(ngModel)]="crud.selectedNiveauList" optionLabel="name" placeholder="Veuiller selectionner un Niveau"></p-multiSelect>
 
-    <br>
-    <label for="dropdownCycle" class="form-label">Filiéres :</label>
+        <br>
+        <label for="dropdownCycle" class="form-label">Filiéres :</label>
 
-    <p-multiSelect class="m-4" [options]="listeFiliere" [(ngModel)]="selectedCities" optionLabel="name" placeholder="Veuiller selectionner une Filiére"></p-multiSelect>
+        <p-multiSelect class="m-4" [options]="listeFiliere" [(ngModel)]="crud.selectedFiliereList" optionLabel="name" placeholder="Veuiller selectionner une Filiére"></p-multiSelect>
 
-    <br>
-    <label for="dropdownCycle" class="form-label">Matiére :</label>
+        <br>
+        <label for="dropdownCycle" class="form-label">Matiére :</label>
 
-    <p-multiSelect class="m-4" [options]="listeMatiere" [(ngModel)]="selectedCities" optionLabel="name" placeholder="Veuiller selectionner une Matiére"></p-multiSelect>
+        <p-multiSelect class="m-4" [options]="listeMatiere" [(ngModel)]="crud.selectedMatiereList" optionLabel="name" placeholder="Veuiller selectionner une Matiére"></p-multiSelect>
 
-    <br>
-    <label for="dropdownCycle" class="form-label">Cours :</label>
+        <br>-->
+        <label for="dropdownCycle" class="form-label">Cours :</label>
 
-    <p-multiSelect class="m-4" [options]="cities" [(ngModel)]="selectedCities" optionLabel="name" placeholder="Veuiller selectionner un Cours"></p-multiSelect>
+        <p-multiSelect class="m-4" [options]="crud.responsesCours" [(ngModel)]="crud.selectedCoursList" optionLabel="name" placeholder="Veuiller selectionner un Cours"></p-multiSelect>
 
-  </div>
-
-</div>
+      </div>
+    <button class="btn btn-primary" (click)="onCreateNewElement()">Enregistrer</button>
+    </div>
