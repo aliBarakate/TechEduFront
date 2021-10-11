@@ -42,6 +42,8 @@ import { CrudCoursComponent } from './crud-cours/crud-cours.component';
 import { CrudChapitresComponent } from './crud-chapitres/crud-chapitres.component';
 import { FormPackComponent } from './form-pack/form-pack.component';
 import {MultiSelectModule} from 'primeng/multiselect';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+
 
 
 registerLocaleData(fr);
@@ -88,7 +90,9 @@ const appRoutes: Routes = [
     CrudPackComponent,
     CrudCoursComponent,
     CrudChapitresComponent,
-    FormPackComponent
+    FormPackComponent,
+    UserDashboardComponent,
+
   ],
   imports: [
     BrowserModule,
