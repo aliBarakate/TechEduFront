@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CrudService} from "../crud.service";
+import {Router} from "@angular/router";
 
 interface City {
   name: string,
@@ -26,7 +27,7 @@ export class FormPackComponent implements OnInit {
     this.crud.sendRequest(this.crud.urlPackPost, this.crud.packData);
     //setTimeout(function(){ location.href = "gestionFiliere"; }, 300);
     this.multipleGetRequest();
-
+    this.router.navigate(['./gestionPack']);
 
   }
   multipleGetRequest() {
@@ -37,7 +38,7 @@ export class FormPackComponent implements OnInit {
 
 
 
-  constructor(public crud: CrudService) {
+  constructor(public crud: CrudService, private router: Router) {
 
 
   this.crud.getRequestParticuliere(this.crud.urlCoursGet,'cours');

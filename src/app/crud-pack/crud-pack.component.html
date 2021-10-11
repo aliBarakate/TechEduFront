@@ -6,12 +6,9 @@
   <nz-table>
     <thead>
     <tr>
-      <th>ID</th>
       <th>Nom du pack</th>
-      <th>Date de création</th>
-      <th>Date de mise à jour</th>
       <th><!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-primary" (click)="onCreateNewElement()">
           Ajouter un nouveaux pack
         </button>
 
@@ -69,11 +66,9 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let response of listePack" >
+    <tr *ngFor="let response of crud.responses" >
 
       <td>{{response.name}}</td>
-      <td>{{response.date_creation}}</td>
-      <td>{{response.date_modification}}</td>
       <td>
         <button type="button" class="btn btn-info" style="margin-right: 2%;" (click)="onClickAfficherBtn(response.id)">Afficher</button>
         <button class="btn btn-warning " style="margin-right: 2%;"data-bs-toggle="modal" data-bs-target="#modifierModal" (click)="crud.id=response.id">Modifier</button><button class="btn btn-danger"  (click)="onDeleteElement(response.id)" >Supprimer</button></td>

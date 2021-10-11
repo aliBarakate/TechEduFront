@@ -16,19 +16,16 @@ export class CrudPackComponent implements OnInit {
   constructor(http: HttpClient,private router : Router,public crud:CrudService) {
   this.listePack=[];
 
-    this.crud.getRequest(this.crud.urlMatiereGet+this.crud.selectedFiliere);
+    this.crud.getRequest(this.crud.urlPackGet);
     console.log(this.crud.matiereData)
   }
 
   onCreateNewElement(){
-    this.listePack.push(this.crud.packData)
-    this.crud.sendRequest(this.crud.urlMatierePost,this.crud.matiereData);
-    this.multipleGetRequest();
-    console.log(this.listePack);
+    this.router.navigate(['./formPack']);
   }
 
   onDeleteElement(id:any){
-    this.crud.deleteRequest(this.crud.urlMatiereDelete+id);
+    this.crud.deleteRequest(this.crud.urlPackDelete+id);
     this.multipleGetRequest();
   }
 
@@ -41,7 +38,7 @@ export class CrudPackComponent implements OnInit {
 
   multipleGetRequest(){
     for ( let i = 0; i < 5; i++) {
-      this.crud.getRequest(this.crud.urlMatiereGet+this.crud.selectedFiliere);
+      this.crud.getRequest(this.crud.urlPackGet);
     }
   }
 
