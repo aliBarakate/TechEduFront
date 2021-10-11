@@ -79,6 +79,7 @@ export class CrudService {
 
   //Crud-matiere
   urlMatiereGet = environment.host + "matieresFiliere/";
+  urlMatiereGetAll = environment.host + "matieres";
   urlMatierePost = environment.host + "matiere";
   urlMatiereDelete = environment.host + "matiere/";
   urlMatierePut = environment.host + "matiere/";
@@ -121,6 +122,7 @@ export class CrudService {
 
   //Crud-Cours
   urlCoursGetForMatiere = environment.host + "coursMatiere/";
+  urlCoursGetAll = environment.host + "cours/";
   urlCoursPost = environment.host + "cours";
   urlCoursDelete = environment.host + "cours/";
   urlCoursPut = environment.host + "cours/";
@@ -130,6 +132,7 @@ export class CrudService {
 
   //Crud-Chapitres
   urlChapitresGetForOneCoursOneFiliere = environment.host +"chapitresCours/";
+  urlChapitresGetAll = environment.host +"chapitres/";
   urlChapitresPost = environment.host + "chapitre";
   urlChapitresDelete = environment.host + "chapitre/";
   urlChapitresPut = environment.host + "chapitre/";

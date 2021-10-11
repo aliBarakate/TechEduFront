@@ -54,4 +54,7 @@ export class MainNavbarComponent implements OnInit {
   onLoadFormPack(){
     this.router.navigate(['./formPack']);
   }
+  onLoadUserDashboard(){
+    this.router.navigate(['./userDashboard']);
+  }
 }

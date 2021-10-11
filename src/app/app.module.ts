@@ -64,6 +64,7 @@ const appRoutes: Routes = [
   { path: 'gestionChapitres',component: CrudChapitresComponent},
   { path: 'gestionCours',component: CrudCoursComponent},
   { path: 'formPack',component: FormPackComponent},
+  { path: 'userDashboard',component: UserDashboardComponent},
 
 
 ];
